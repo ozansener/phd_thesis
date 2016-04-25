@@ -1,0 +1,9 @@
+% !TEX root = robobrain.tex
+\noindent
+\textbf{Knowledge bases.}
+Collecting and representing a large amount of information in a knowledge base (KB) has been widely studied in the
+areas of data mining, natural language processing and machine learning. Early seminal works have manually created KBs for the study of common sense knowledge (Cyc \cite{cyc1995}) and lexical knowledge (WordNet \cite{wordnet1998}). With the growth of Wikipedia, KBs started to use crowd-sourcing (DBPedia \cite{dbpedia2007}, Freebase \cite{freebase2008}) and automatic information extraction (Yago \cite{yago2007,yago22013}, NELL \cite{nell2010}) for mining knowledge.
+
+One of the limitations of these KBs is their strong dependence on a single modality that is the text modality. There have been few successful attempts to combine multiple modalities. ImageNet \cite{imagenet2009} and NEIL \cite{chen_iccv13} enriched text with images obtained from Internet search. They used crowd-sourcing and unsupervised learning to get the object labels. These object labels were further extended to object affordances \cite{zhu2014}.
+
+We have seen successful applications of the existing KBs within the modalities they covered, such as IBM Watson Jeopardy Challenge \cite{ferrucci2012a}. However, the existing KBs are human centric and do not directly apply to robotics. The robots need finer details about the physical world, e.g., how to manipulate objects, how to move in an environment, etc. In \robobrain{} we combine knowledge from the Internet sources with finer details about the physical world, from \robobrain{} project partners, to get an overall rich graph representation.

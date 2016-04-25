@@ -1,0 +1,87 @@
+% Some illegal space-saving macros
+% \parskip=1pt
+  \abovedisplayskip 3.0pt plus2pt minus2pt%
+ \belowdisplayskip \abovedisplayskip
+\renewcommand{\baselinestretch}{0.97}
+
+\newenvironment{packed_enum}{
+\begin{enumerate}
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}
+{\end{enumerate}}
+
+\newenvironment{packed_item}{
+\begin{itemize}
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+\newlength\savedwidth
+\newcommand\whline[1]{\noalign{\global\savedwidth\arrayrulewidth
+                               \global\arrayrulewidth #1} %
+                      \hline
+                      \noalign{\global\arrayrulewidth\savedwidth}}
+
+% \renewcommand\multirowsetup{\centering}
+
+\newlength{\sectionReduceTop}
+\newlength{\sectionReduceBot}
+\newlength{\subsectionReduceTop}
+\newlength{\subsectionReduceBot}
+\newlength{\abstractReduceTop}
+\newlength{\abstractReduceBot}
+\newlength{\captionReduceTop}
+\newlength{\captionReduceBot}
+%\newlength{\nameReduceTop}
+\newlength{\subsubsectionReduceTop}
+\newlength{\subsubsectionReduceBot}
+\newlength{\headerReduceTop}
+% Negative space for figures set at the bottom of a block of figs
+\newlength{\figureReduceBot}
+
+\newlength{\horSkip}
+\newlength{\verSkip}
+
+\newlength{\equationReduceTop}
+
+\newlength{\figureHeight}
+\setlength{\figureHeight}{1.7in}
+
+%\newlength{\figureFraction}
+\setlength{\horSkip}{-.09in}
+\setlength{\verSkip}{-.1in}
+%\setlength{\figureFraction}{.195}
+
+% figureReduceBot is for figures which are set above text, since latex
+% likes putting a lot of space under those
+\setlength{\figureReduceBot}{-0.15in}
+\setlength{\headerReduceTop}{0in}
+%
+%\setlength{\subsectionReduceTop}{-0.08in}
+%\setlength{\subsectionReduceBot}{-0.05in}
+\setlength{\subsectionReduceTop}{-0.02in}
+\setlength{\subsectionReduceBot}{-0.02in}
+%\setlength{\sectionReduceTop}{-0.03in}
+%\setlength{\sectionReduceBot}{-0.03in}
+\setlength{\sectionReduceTop}{-0.02in}
+\setlength{\sectionReduceBot}{-0.01in}
+\setlength{\subsubsectionReduceTop}{-0.06in}
+\setlength{\subsubsectionReduceBot}{-0.05in}
+%
+%
+%\setlength{\figureHeight}{1.5in}
+\setlength{\abstractReduceTop}{-0.05in}
+\setlength{\abstractReduceBot}{-0.10in}
+%
+%
+
+\setlength{\equationReduceTop}{-0.1in}
+
+%\setlength{\nameReduceTop}{-0.05in}
+
+
+\setlength{\captionReduceTop}{-0.06in}
+\setlength{\captionReduceBot}{-0.07in}

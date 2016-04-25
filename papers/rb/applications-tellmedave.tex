@@ -1,0 +1,19 @@
+% !TEX root = robobrain.tex
+
+\subsubsection{Grounding natural language} The problem of grounding a natural language instruction in an environment requires the robot to formulate an action sequence  that accomplish the semantics of the  instruction~\citep{tellex2011understanding,misra2014tell,guadarrama2013grounding, MatuszekISER2012}. In order to do this, the robot needs a variety of information. Starting with finding action verbs and objects in the instruction, the robot has  to discover those objects and their affordances in the environment.
+
+% \robobrain{} provides natural language grounding \textit{as-a-service}.
+
+We now show the previous work by Misra et al.~\cite{misra2014tell} using \robobrain{} \textit{as-a-service} in their algorithm. In order to ground a natural language instruction the robot has to check for the satisfiability of the actions it generates in the given environment. For example, an action which pours water on a book should be deemed unsatisfiable. In the previous work~\cite{misra2014tell}, the authors manually define many pre-conditions to check the satisfiability of actions. For example, they define manually that a \textit{syrup bottle} is \textit{squeezable}. Such satisfiability  depends on the object's affordances in the given environment, which can be retrieved from \robobrain{}.
+
+Figure~\ref{Fig:languagegrounding} illustrates a robot querying \robobrain{} to check the satisfiability of actions that it can perform in the given environment. Below is the RQL query for retrieving the satisfiability of  \textit{squeezable} action:
+%\noindent \resizebox{\linewidth}{!}{
+%\begin{minipage}{\linewidth}
+\vskip -.15in
+{\small
+\begin{align*}
+&{\tt {squeezable \,\ syrup}\,\,  := \,\,Len \,\,fetch \,\,(u\{name:`syrup'\})\rightarrow }\\
+&{\tt \hspace*{0.1cm} [`HasAffordance']\rightarrow (v\{name:`squeezable'\})\,\,> 0}
+\end{align*}
+%  \end{minipage}
+}\vskip -.01in

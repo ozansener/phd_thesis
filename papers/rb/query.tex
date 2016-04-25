@@ -1,0 +1,91 @@
+% !TEX root = robobrain.tex
+\section{Robot Query Library (RQL)}
+\label{sec:raquel}
+In this section we present the RQL query language,
+through which the robots use \robobrain{} for various robotic applications.
+The RQL provides a rich set of \textit{retrieval functions} and \textit{programming constructs} to
+perform complex traversals on the \robobrain{} graph. An example of such a query is finding the possible ways
+for humans to use a cup. This query requires traversing paths from the human node to the cup node in
+the \robobrain{} graph.
+
+The RQL allows expressing both the \textit{pattern} of sub-graphs to match and the
+\textit{operations} to perform on the retrieved information. An example of such an operation is
+\textit{ranking} the paths from the human to the cup node in the order of relevance. The RQL admits following two types of functions: (i) graph retrieval
+functions; and (ii) programming construct functions.
+
+\subsection{Graph retrieval function}
+The graph retrieval function is used to find sub-graphs matching a given \textit{template} of the form: $$\text{Template: }(u)\rightarrow [e] \rightarrow (v)$$
+In the template above, the variables $u$ and $v$ are nodes in the graph and the variable $e$ is a directed edge from $u$ to $v$. We represent the graph retrieval function with the keyword ${\tt fetch}$ and the corresponding RQL query takes the following form:
+$${\tt fetch}(\text{Template})$$
+The above RQL query finds the sub-graphs matching the template. It instantiates the variables in the template to match the sub-graph and returns the list of instantiated variables. We now give a few use cases of the retrieval function for \robobrain{}.
+
+\begin{example}
+The RQL query to retrieve all the objects that a human can use
+\begin{align*}
+\text{Template: }&{\tt(\{name:`Human'\})\rightarrow [`CanUse'] \rightarrow (v)}\\
+\text{Query: }&{\tt fetch}(\text{Template})
+\end{align*}
+The above query returns a list of nodes that are connected to the node with name ${\tt{Human}}$ and with an edge of type ${\tt{CanUse}}$.% We  now give a query example for retrieving nodes that not directly connected.
+\end{example}
+Using the RQL  we can also express several \textit{operations} to perform on the retrieved results.
+The operations can be of type   ${\tt SortBy}$, ${\tt Len}$, ${\tt Belief}$ and ${\tt ArgMax}$. We now
+explain some of these operations with an example.
+\begin{example}
+The RQL query to retrieve and sort all possible paths from the ${\tt{Human}}$ node to the ${\tt{Cup}}$ node.
+%\noindent \resizebox{\linewidth}{!}{
+%\begin{minipage}{\linewidth}
+\vskip -0.13in
+{\small
+\begin{align*}
+ &{\tt paths }:= \;{\tt fetch (\{name:`Human'\})\rightarrow [r *] \rightarrow (\{name:`Cup'\})}\\
+& {\tt SortBy(\lambda P \rightarrow Belief \, P) \, paths} \\
+\end{align*}
+%\end{minipage}
+}\vskip -0.15in
+
+In the example above, we first define a function ${\tt paths}$ which returns all  the paths from the node ${\tt Human }$ to the node ${\tt Cup }$ in the form of a list. The ${\tt SortBy}$ query first runs the ${\tt paths}$ function and then sorts, in decreasing order, all paths in the returned list using their beliefs.
+\end{example}
+
+
+\subsection{Programming construct functions}
+The programming construct functions serve to process the sub-graphs retrieved by the graph retrieval function ${\tt fetch}$. In order to define these functions we make use of functional programming constructs like ${\tt map}$, ${\tt filter}$ and ${\tt find}$. We now explain the use of some of these constructs in RQL.
+
+\begin{example}
+The RQL query to retrieve affordances of all the objects that ${\tt{Human}}$ can use.
+\vskip -0.13in
+%\noindent \resizebox{\linewidth}{!}{
+%\begin{minipage}{\linewidth}
+{\small
+\begin{align*}
+&  {\tt objects }:=\; {\tt fetch (\{name:`Human'\})\rightarrow [`CanUse'] \rightarrow (v)} \\
+&  {\tt affordances \;n } := \;{\tt fetch (\{name:n\})\rightarrow [`Has Affordance'] \rightarrow (v)} \\
+&  {\tt map(\lambda u \rightarrow affordances \, u) \,  objects} \\
+\end{align*}
+%\end{minipage}
+}\vskip -0.15in
+
+\noindent In this example, we illustrate the use of ${\tt map}$ construct. The ${\tt map}$ takes as input a function and a list, and then applies the function to every element of the list. More specifically, in the example above, the function ${\tt objects }$ retrieves the list of objects that the human can use. The ${\tt affordances }$ function takes as input an object and returns its affordances. In the last RQL query, the ${\tt map}$  applies the function ${\tt affordances}$ to the list returned by the function ${\tt objects}$.
+\end{example}
+We now conclude this section with an expressive RQL query for retrieving \textit{joint parameters} shared among nodes. Parameters are one of the many concepts we store in \robobrain{} and they represent learned knowledge about nodes. The algorithms use joint parameters to relate multiple concepts and here we show how to retrieve joint parameters shared by multiple nodes. In the example below, we describe the queries for parameter of a single node and parameter shared by two nodes.
+
+\begin{example}
+\label{ex:joint}
+The RQL query to retrieve the joint parameters shared between a set of nodes.
+\vskip -0.13in
+%\noindent \resizebox{\linewidth}{!}{
+%\begin{minipage}{\linewidth}
+{\small
+\begin{align}
+&{\tt {parents} \,\, n := fetch \,\, (v)\rightarrow [`HasParameters']\rightarrow  (\{handle:n\}) }\nonumber \\
+& {\tt {parameters} \,\, n :=  fetch \,\, (\{name:n\})\rightarrow [`HasParameters']\rightarrow }  (v)  \nonumber  \\
+& {\tt {ind\_parameters}\;\; a := }  \cr
+&{\tt \hspace*{2cm} filter (\lambda u \rightarrow\! {Len \; parents}\; u = 1)     {parameters}\, a \nonumber } \\
+& {\tt {joint\_parameters} \,\, a_1 \,\, a_2\,\, := } \cr
+& {\tt \hspace*{2cm} filter (\lambda u \rightarrow {Len\; parents}\,\, u = 2\,\, and } \cr
+& {\tt \hspace*{2cm}  u \,\, in \,\, {parameters}\,\, a_2)    \,\,{parameters}\,\, a_1 \nonumber}
+\end{align}
+%\end{minipage}
+}\vskip -0.01in
+The query above uses the ${\tt filter}$ construct function and ${\tt Len}$ operation. The ${\tt filter}$ takes as input a list and a check condition, and returns only those items from the list that satisfies the input condition. The ${\tt Len}$ takes as input a list and returns the number of items in the list.
+In the query above, we first define a function ${\tt parents}$ which for a given input node returns its parent nodes. Then we define a function ${\tt parameters}$ which for a given input node returns its parameters. The third and the fourth queries are functions accepting one and two input nodes, respectively, and return the (joint) parameters that share an edge with every input node and not with any other node.
+\end{example}

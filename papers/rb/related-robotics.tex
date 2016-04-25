@@ -1,0 +1,76 @@
+% !TEX root = robobrain.tex
+
+
+\noindent
+\textbf{Robot Learning.}
+For robots to operate autonomously they should perceive their environments, plan paths, manipulate objects and interact with humans. We describe previous work in each of these areas and how \robobrain{} complements them.
+
+\noindent
+\emph{Perceiving the environment.} Perception is a key element of many robotic tasks. It has been applied to object labeling~\cite{lai:icra11a, KoppulaIJRR2012,wulenzsaxena2014_hierarchicalrgbdlabeling}, scene understanding~\cite{KitaniECCV2012,guptaECCV14}, robot localization~\cite{McManus-RSS-14,NaseerAAAI14},  path planning~\cite{KatzAR14}, and object affordances~\cite{delaitre2012, KoppulaECCV14}. \robobrain{} stores perception related knowledge in the form of 3D point clouds, grasping features, images and videos. It also connects this knowledge to human understandable concepts from the Internet knowledge sources.
+
+
+
+\noindent
+\emph{Path planning and manipulation.} Planning algorithms formulate action plans which are used by robots to move around and modify its environment. Planning algorithms have been proposed for the problems of motion planning~\cite{ZuckerCHOMP13, SchulmanRSS13},  task planning~\cite{alami2006toward, BolliniISER12} and symbolic planning~\cite{edelkamp2009optimal, rintanen2012planning}. Some planning applications include robots baking cookies~\cite{BolliniISER12}, folding towels~\cite{Maitin-ShepardICRA10}, assembling furniture~\cite{KnepperICRA13}, and preparing pancakes~\cite{Beetz11}. The previous works have also learned planning parameters using methods such as Inverse Optimal Control~\citep{AbbeelIJRR10,Ratliff06,ZiebartAAAI08,jainsaxena2013_trajectorypreferences}. \robobrain{} stores the planning parameters learned by previous works and allow the robots to query for the parameters.
+
+\iffalse
+\noindent
+\emph{Path and manipulation planning.} There exist a large class of algorithms which allow
+robots to move around and modify the environment. Broadly planning algorithms can be
+categorized as motion planning \cite{ZuckerCHOMP13, SchulmanRSS13},
+ task planning \cite{alami2006toward, BolliniISER12} and symbolic planning
+ \cite{edelkamp2009optimal, rintanen2012planning}.
+Bakebot \cite{BolliniISER12}, towel-folding \cite{Maitin-ShepardICRA10}, IkeaBot \cite{KnepperICRA13} and robots preparing pancakes \cite{Beetz11}
+are few of the many successful planning applications.
+Most planning algorithms abstract out the perception details, however access to
+perception and manipulation knowledge can allow robots to plan in dynamic real world environments.
+\fi
+
+
+\noindent
+\emph{Interacting with humans.} Human-robot interaction includes collaborative tasks between humans and robots~\cite{NikolaidisISR10,nikolaidis2013human}, generating safe and human-like robot motion~\cite{Mainprice13,LasotaCASE14,GielniakIJRR13,DraganRSS13,CakmakIROS11}, interaction through natural language~\cite{TellexRSS14,misra2014tell}, etc. These applications require joint treatment of perception, manipulation and natural language understanding. \robobrain{} stores different data modalities required by these applications.
+\iffalse
+\noindent
+\emph{Interacting with humans.} Another important aspect is
+human-robot interaction. Previous works have focused on various aspects,
+such as human-robot collaboration for task completion \cite{NikolaidisISR10, koppula-anticipatoryplanning-iser2014}, generating safe
+robot motion near humans \cite{Mainprice13, LasotaCASE14},
+ obeying user preferences \cite{CakmakIROS11},
+ generating human like and legible motions \cite{GielniakIJRR13, DraganRSS13},
+interaction through natural language \cite{TellexRSS14,misra2014tell}, etc.
+These applications require joint treatment of perception, manipulation and natural language understanding.
+
+%All these applications require access to perception, manipulation, language understanding, etc.,
+%further demonstrating the need for large scale multi-modal data.
+
+
+
+%Although, there has been significant success in addressing these problems individually,
+%previous works were not able to exploit the common information shared by these problems.
+%For example, \todo{rewrite the example below and clarify why they couldnt use the shared information..
+%However, these problems share many common information which previous works have not exploited.
+%Such as previous works have perceived
+%environments with cups, have manipulated with for pouring water and have learned
+%how to manipulate it near human when it contains hot coffee. }
+%Our RoboBrain knowledge engine enables sharing information across these tasks by allowing
+%queries to the graph for information spanning several sub-problems.
+\fi
+
+Previous efforts on connecting robots range from creating a common operating system (ROS) for
+ robots \cite{Quigley09}
+to sharing data acquired by various robots via cloud \cite{RoboEarth, KIVA}.
+For example, the RoboEarth \cite{RoboEarth} provides a platform for the robots to store and off-load computation
+to the cloud and communicate with other robots; and the KIVA systems \cite{KIVA} use the cloud to coordinate motion for hundreds of mobile platforms. On the other hand, \robobrain{} provides a
+knowledge representation layer on top of data storing, sharing and communication.
+
+Open-Ease~\cite{openease} is a related on-going effort towards building a knowledge engine for robots.
+Open-Ease and \robobrain{} differ in the way they learn and represent knowledge. In Open-Ease the knowledge is represented as formal statements using pre-defined templates. On the other hand, the knowledge in \robobrain{} is represented as a graph. The nodes of the \robobrain{} graph have no pre-defined templates and they can be any robotic concept like grasping features, trajectory parameters, and visual data. This graph representation allows partner projects to easily integrate their learned concepts in \robobrain{}. The semantic meaning of concepts in the \robobrain{} graph are represented by their connectivity patterns in the graph. %The Open-Ease is similar to the \robobrain{} in that it also collects knowledge through robot interactions.
+\iffalse
+A closely related on-going effort is Open-Ease \cite{openease}
+It focuses on a similar problem of cloud knowledge-base and inference engine for robots.
+It is different from \robobrain{} in a way it incorporates knowledge and do inference.
+Open-ease requires input to be in the form of a facts written in a formal logic statements following the pre-defined structure and uses an
+inference engine designed for the language. On the other hand, \robobrain{} accepts unstructured information as nodes and their relations as edges.
+\robobrain{} automatically infers the structure and it also infers the correctness and the latent semantic meaning. Our approach brings flexibility with the cost
+of a technical challenges in inference and learning.
+\fi

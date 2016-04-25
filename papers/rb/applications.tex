@@ -1,0 +1,25 @@
+% !TEX root = robobrain.tex
+\section{Applications}
+\label{sec:applications}
+In this section we first show how \robobrain{} can be used \textit{as-a-service} by the robots for several robotics problems. Specifically, we explain the usage of \robobrain{} in anticipating human activities, grounding of natural language sentences, and path planning. We then show how \robobrain{} can help robotics projects by sharing knowledge within the projects and throughout the Internet.
+
+\subsection{\robobrain{} \textit{as-a-service}}
+Our goal with providing \robobrain{} \textit{as-a-service} is to allow robots to use the representations learned by different partner projects. 
+% For this purpose the 
+% RKE stores the representations learned by different projects, allows queries through RQL. 
+This 
+% feature of the RKE 
+allows \robobrain{} to effortlessly address many robotics applications. In the following we demonstrate \robobrain{} as-a-service feature for three robotics applications that deal with different data modalities of perception, natural language and trajectories.
+
+\input{./papers/rb/applications-anticipation}
+\input{./papers/rb/applications-tellmedave}
+\begin{figure}[t]
+\centering
+\includegraphics[width=1\linewidth]{./Image/tellmedave_robobrain_pic.pdf}
+\caption{\textbf{Grounding natural language sentence.} The robot grounds natural language by using the algorithm by Misra et al.~\cite{misra2014tell} and querying \robobrain{} to check for the satisfiability of actions.}
+%\cite{misra2014tell} requires several  pieces of knowledge. Robot should know the appearances and affordances of objects, as well as the possible actions related to each object and it should know the trajectories and manipulation features of those actions. These are all  translated as queries to the RKE graph.}
+\label{Fig:languagegrounding}
+\vskip -.05in
+\end{figure}
+\input{./papers/rb/applications-planning}
+\input{./papers/rb/knowledge-sharing}

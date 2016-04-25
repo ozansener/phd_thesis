@@ -1,0 +1,39 @@
+% !TEX root = robobrain.tex
+
+% \section{Technical Challenges}
+\section{Overview}
+\label{overviewPaper}
+
+\robobrain{} is a never ending learning system  that  continuously incorporates
+new knowledge from  its partner projects and from different Internet sources.
+One of the functions of \robobrain{} is to represent the knowledge from various sources as a graph,
+as shown in  Figure~\ref{fig:graph}. The nodes of the graph represent concepts and edges represent the
+relations between them. The connectivity of the graph is increased through a set of graph operations
+that allow additions, deletions and updates to the graph. As of the date of this submission,
+\robobrain{} has successfully
+connected knowledge from sources like WordNet, ImageNet, Freebase, OpenCyc,
+ parts of Wikipedia and other partner projects. These knowledge sources provide lexical knowledge, grounding of concepts into images and common sense facts about the world.
+
+The knowledge from the partner projects and Internet sources can sometimes be erroneous. \robobrain{}
+handles inaccuracies in  knowledge by maintaining beliefs over the correctness of the concepts and
+relations. These beliefs depend on how much \robobrain{} trusts a given source of knowledge, and also the
+feedback it receives from crowd-sourcing (described below). For every incoming knowledge, \robobrain{}
+also makes a sequence of decisions on whether to form new nodes, or edges, or both. Since the
+knowledge carries semantic meaning \robobrain{} makes many of these decisions based on the
+contextual information that it gathers from nearby nodes and edges. For example, \robobrain{} resolves
+polysemy using the context associated with nodes. Resolving polysemy is important because a `plant'
+could mean a `tree' or an `industrial plant' and merging the nodes together will create errors in the
+graph.
+
+
+\robobrain{} incorporates supervisory signals from humans in the form of crowd-sourcing feedback. This
+feedback allows \robobrain{} to update its beliefs over the correctness of the knowledge, and to modify the
+graph structure if required. While crowd-sourcing feedback was used in some previous works as
+means for data collection (e.g.,~\citep{imagenet2009,Russell08}), in \robobrain{} they serve as supervisory
+signals that improve the knowledge engine. \robobrain{} allows user interactions at multiple levels: (i)~
+Coarse feedback: these are binary feedback where a user can ``Approve'' or ``Disapprove'' a concept
+in \robobrain{} through its online web interface; (ii) Graph feedback: these feedback are elicited on 
+\robobrain{} \textit{graph visualizer}, where a user modifies the graph by adding/deleting nodes or edges; (iii)
+Robot feedback: these are the physical feedback given by users directly on the robot.
+
+In this paper we discuss different aspects of \robobrain{}, and show how \robobrain{} serves as a knowledge layer for the robots. In order to support knowledge sharing, learning, and crowd-sourcing feedback we develop a large-scale distributed system. We describe the architecture of our  system in Section~\ref{sec:system}. In Section~\ref{sec:raquel} we describe the robot query library, which allow robots to interact with \robobrain{}.  Through experiments we show that robots can use \robobrain{} \textit{as-a-service} and that knowledge sharing through \robobrain{} improves existing robotic applications. We now present a formal definition of our Robot Knowledge Engine and the graph.
