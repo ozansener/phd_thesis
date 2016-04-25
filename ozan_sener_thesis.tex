@@ -13,9 +13,10 @@
 %
 %Some possible packages to include
 \usepackage{hyperref}
-
 \usepackage{graphicx,pstricks}
 \usepackage{graphics}
+\usepackage{algorithm}
+\usepackage{algorithmic}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{moreverb}
@@ -30,6 +31,13 @@
 \usepackage{xcolor}
 \usepackage{booktabs}
 \usepackage[numbers]{natbib}
+\usepackage{relsize}
+\usepackage{lmodern}
+\usepackage{slantsc}
+\usepackage{siunitx}
+\sisetup{output-exponent-marker=\ensuremath{\mathrm{E}}}
+
+
 
 
 \DeclareSymbolFont{extraup}{U}{zavm}{m}{n}
@@ -41,6 +49,16 @@
 \newcommand{\etal}{\textit{et al}.}
 \newcommand{\ie}{\textit{i}.\textit{e}.}
 \newcommand{\eg}{\textit{e}.\textit{g}.}
+\newcommand{\xsj}{\mathbf{\hat{x}}_j}
+\newcommand{\xuj}{\mathbf{x}_j}
+\newcommand{\xsi}{\mathbf{\hat{x}}_i}
+\newcommand{\xui}{\mathbf{x}_i}
+\newcommand{\ysi}{\hat{y}_i}
+\newcommand{\ysj}{\hat{y}_j}
+\newcommand{\yui}{y_i}
+\newcommand{\sw}{s_{ \textsc{\relsize{-2}{\textsl{W}}} }}
+
+%\newcommand{\theHalgorithm}{\arabic{algorithm}}
 
 %if you're having problems with overfull boxes, you may need to increase
 %the tolerance to 9999
@@ -56,6 +74,7 @@
 \renewcommand{\topfraction}{0.85}
 \renewcommand{\textfraction}{0.1}
 \renewcommand{\floatpagefraction}{0.75}
+\newtheorem{mydef}{Definition}
 
 %\title {Learning to represent unstructured large-scale visual data for robot perception}
 %\title {Learning representations from unstructured large-scale visual data}
@@ -68,7 +87,7 @@
 \copyrightholder{Ozan \c{S}ener}
 \copyrightyear{2016}
 
-\graphicspath{{./images/},{./papers/ijcv/images/},{./Image/}}
+\graphicspath{{./images/},{./papers/ijcv/images/},{./Image/},{./papers/rss/images/},{./papers/da/images/}}
 
 
 \begin{document}
@@ -127,6 +146,6 @@ To the Woodstock and the musicians of 60s.
 \appendix
 \input{appx}
 
-\bibliography{ozan_sener_thesis, references, shortstrings}
+\bibliography{shortstrings,shortstrings2,ozan_sener_thesis}
 
 \end{document}
