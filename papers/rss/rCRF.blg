@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: rCRF.aux
+The style file: plainnat.bst
+Database file #1: shortstrings.bib
+Database file #2: anticipation_divmrf.bib
+Warning--there's a number but no volume in geman
+Warning--empty journal in hc1971
+Warning--empty booktitle in hemaISER
+You've used 47 entries,
+            2773 wiz_defined-function locations,
+            945 strings with 13064 characters,
+and the built_in function-call counts, 24023 in all, are:
+= -- 2151
+> -- 1396
+< -- 36
++ -- 471
+- -- 423
+* -- 1870
+:= -- 3562
+add.period$ -- 158
+call.type$ -- 47
+change.case$ -- 278
+chr.to.int$ -- 46
+cite$ -- 97
+duplicate$ -- 1174
+empty$ -- 1992
+format.name$ -- 492
+if$ -- 5181
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 50
+newline$ -- 246
+num.names$ -- 188
+pop$ -- 642
+preamble$ -- 1
+purify$ -- 235
+quote$ -- 0
+skip$ -- 888
+stack$ -- 0
+substring$ -- 844
+swap$ -- 208
+text.length$ -- 18
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 497
+warning$ -- 3
+while$ -- 205
+width$ -- 0
+write$ -- 621
+(There were 3 warnings)

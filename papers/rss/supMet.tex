@@ -1,0 +1,194 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{times}
+
+% numbers option provides compact numerical references in the text.
+\usepackage[numbers]{natbib}
+\usepackage{multicol}
+\usepackage[bookmarks=true]{hyperref}
+
+\usepackage{graphicx} % more modern
+%\usepackage{epsfig} % less modern
+\usepackage{subfigure}
+
+% For algorithms
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsmath}
+\usepackage{amssymb}
+% Include other packages here, before hyperref.
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{wrapfig}
+\usepackage{dsfont}
+
+\usepackage[it,small]{caption}
+
+
+\newcommand{\argmax}{\operatorname{arg\,max}}
+\newcommand{\argmin}{\operatorname{arg\,min}}
+\newcommand{\todo}[1]{\textcolor{blue}{\textbf{#1}}}
+\newtheorem{mydef}{Definition}
+
+
+
+\graphicspath{{./images/}}
+\usepackage{multirow}
+\input{space_saver}
+
+
+\pdfinfo{
+   /Author (Homer Simpson)
+   /Title  (Robots: Our new overlords)
+   /CreationDate (D:20101201120000)
+   /Subject (Robots)
+   /Keywords (Robots;Overlords)
+}
+
+\begin{document}
+
+% paper title
+\title{Supplementary Material For \\ rCRF: Recursive Belief Estimation over CRFs in RGB-D Activity Videos}
+
+% You will get a Paper-ID when submitting a pdf file to the conference system
+%\author{Author Names Omitted for Anonymous Review. Paper-ID 63}
+\author{
+\authorblockN{Ozan Sener}
+\authorblockA{School of Electrical \& Computer Eng. \\ Cornell University}
+\and
+\authorblockN{Ashutosh Saxena}
+\authorblockA{Department of Computer Science \\ Cornell University}
+}
+
+
+\maketitle
+
+\IEEEpeerreviewmaketitle
+
+\section{Introduction}
+In this supplementary material, we give the detailed derivation of the posterior belief we state in equation (8) of the main paper as well as the detailed algorithm to solve the optimization problem in equation (10) of the main paper. We also present the experimental results we did not include in the main paper due to the space limit. Furthermore, we explain the details of the computational-efficiency experiment we conducted in order to obtain the results in Table~3 of the main paper.
+\section{Supplementary Derivations}
+\subsection{Posterior Belief}
+Here, we present the derivation of the posterior belief (main paper Eq 8).
+
+We start with the definition of a belief as \mbox{$bel^t(\mathbf{y}) \propto  \alpha^t(\mathbf{y}) \beta^t(\mathbf{y})$} and substitute the definition of the messages from (main paper Eq 3). The resulting belief in log likelihood form is,
+%\begin{equation}\small
+%  \begin{aligned}
+%bel^t(\mathbf{y}) = &p(\mathbf{x}^t|\mathbf{y}^t)\sum_{\mathbf{y}^{t-1}} \alpha^{t-1}(\mathbf{y}^{t-1}) p(\mathbf{y}^{t}|\mathbf{y}^{t-1})\\&\cdot \sum_{\mathbf{y}^{t+1}} p(\mathbf{x}^{t+1}|\bf{y}^{t+1}) \beta^{t+1}(\mathbf{y}^{t+1}) p(\mathbf{y}^{t+1}|\mathbf{y}^{t})
+%\end{aligned}
+%\end{equation}
+%We convert the resultant belief into log likelihood form
+%After taking the logarithm of the belief and present as,
+\begin{equation}\small
+\begin{aligned}
+\log~bel^t(\mathbf{y}) &= \log p(\mathbf{x}^t|\mathbf{y}^t) + \log \sum_{\mathbf{y}^{t-1}} \alpha^{t-1}(\mathbf{y}^{t-1}) p(\mathbf{y}^{t}|\mathbf{y}^{t-1}) \\
+&+ \log \sum_{\mathbf{y}^{t+1}} p(\mathbf{x}^{t+1}|\bf{y}^{t+1}) \beta^{t+1}(\mathbf{y}^{t+1}) p(\mathbf{y}^{t+1}|\mathbf{y}^{t})
+\end{aligned}
+\end{equation}
+Here, we observe that forward message \mbox{$\alpha^{t-1}(\mathbf{y}^{t-1})=p(\mathbf{y}^{t-1}|\mathbf{x}^{1},\ldots,\mathbf{x}^{t-1})$} is a probability distribution, and backward message $\frac{1}{\gamma} \beta^{t+1} (\mathbf{y}^{t+1})  p(\mathbf{x}^{t+1}|\bf{y}^{t+1})$ can be considered as unnormalized density with a normalization term $\gamma$. Similar to the measurement equation, we also approximate the belief with its lower bound via Jensen inequality and compute the belief as;
+%\begin{equation}\small
+%\begin{aligned}
+%&\sum_{\mathbf{y}^{t-1}} \alpha^{t-1}(\mathbf{y}^{t-1})p(\mathbf{y}^{t}|\mathbf{y}^{t-1})=E_{\alpha^{t-1}}[p(\mathbf{y}^{t}|\mathbf{y}^{t-1})] \\
+%&\sum_{\mathbf{y}^{t+1}} \beta^{t+1} (\mathbf{y}^{t+1}) p(\mathbf{x}^{t+1}|\bf{y}^{t+1}) p(\mathbf{y}^{t+1}|\mathbf{y}^{t}) = E_{\frac{1}{\gamma}\beta^{t+1}}[ \gamma p(\mathbf{y}^{t+1}|\mathbf{y}^{t})]
+%\end{aligned}
+%\end{equation}
+\begin{equation}\small
+  \begin{aligned}
+\log~&bel^t(\mathbf{y}) \approx \log p(\mathbf{x}^t|\mathbf{y}^t) + \sum_{\mathbf{y}^{t-1}} \alpha^{t-1}(\mathbf{y}^{t-1}) \log p(\mathbf{y}^{t}|\mathbf{y}^{t-1}) \\
+&+ \frac{1}{\gamma}\sum_{\mathbf{y}^{t+1}}\beta^{t+1}(\mathbf{y}^{t+1}) p(\mathbf{x}^{t+1}|\mathbf{y}^{t+1}) \log p(\mathbf{y}^{t+1}|\mathbf{y}^{t})+\log{\gamma}
+\end{aligned}
+\end{equation}
+Here, we also substitute $p(\mathbf{x}^t|\mathbf{y}^t)$ with (main paper Eq 7) and obtain the belief up to a scale as;
+\begin{equation}\small
+  \begin{aligned}
+&bel(\mathbf{y^t}) \propto \exp\left[  \sum_{i,j \in E^t} \left( \theta_{x^t_i,x^t_j}(y^t_i,y^t_j) - \tilde{\theta}(y^t_i,y^t_j) \right) \right. \\
+&\left. \sum_{i \in V^t} \left( \theta_{x^t_i}(y^t_i) - \tilde{\theta}(y^t_i) +  \sum_{\mathbf{y}^{t-1}} \alpha^{t-1}(\mathbf{y}^{t-1}) \log p(y^t_i|y^{t-1}_i) \right. \right. \\
+&+\left.\left.\frac{1}{\gamma}\sum_{\mathbf{y}^{t+1}} \beta^{t+1}(\mathbf{y}^{t+1}) p(\mathbf{x}^{t+1}|\mathbf{y}^{t+1}) \log p(y^{t+1}_i|y^{t}_i) \right) \right]
+\end{aligned}
+\label{crfbelief}
+\end{equation}
+where $\gamma=\sum_{\mathbf{y}^{t+1}} \beta^{t+1}(\mathbf{y}^{t+1}) p(\mathbf{x}^{t+1}|\mathbf{y}^{t+1})$
+\subsection{Solving Div-M-Best for rCRF}
+In this section, we explain how to solve the optimization problem in (main paper Eq 10) by using the Lagrange relaxation proposed by Batra et al.\cite{divmbest}.
+
+We are interested in the following optimization problem;
+\begin{equation}
+\begin{aligned}
+\mathbf{y}^{t,i} &= \argmax_{\mathbf{y}}  bel^t(\mathbf{y}) \\
+&s.t.\,\, \Delta(\mathbf{y},\mathbf{y}^{t,j}) \geq \delta \quad \forall \; {j < i}
+\end{aligned}
+\label{divopt}
+\end{equation}
+We first take the logarithm of the objective function since $\log$ is a monotonic function. We then follow the Div-M-Best procedure \cite{divmbest}. Div-M-Best uses Lagrange relaxation after dualizing the $\Delta(\bf{y},\bf{y}^{t,j}) \geq \delta$ constraints. Hence, the relaxed unconstrained optimization problem is,
+\begin{equation}
+\begin{aligned}
+\mathbf{y}^{t,i} &= \argmax_{\mathbf{y}}  \log bel^t(\mathbf{y}) + \sum_{m=0}^{i-1} \lambda_m (\Delta(\mathbf{y},\mathbf{y}^{t,m}) - \delta)
+\end{aligned}
+\label{divoptL}
+\end{equation}
+
+Please note that we use the hamming distance for $\Delta(\cdot$,$\cdot)$ within all of our experiments. Hence, we substitute the Hamming distance in the optimization objective with $\Delta(\cdot$,$\cdot)$. We further substitute the (\ref{crfbelief})  as,
+\begin{equation}\small
+\begin{aligned}
+\mathbf{y}^{t,i} &= \argmax_{\mathbf{y}}  \sum_{i,j \in E^t} \left( \theta_{x^t_i,x^t_j}(y^t_i,y^t_j) - \tilde{\theta}(y^t_i,y^t_j) \right) \\
+&\sum_{i \in V^t} \left( \theta_{x^t_i}(y^t_i) - \tilde{\theta}(y^t_i) + \sum_{m=0}^{i-1} \lambda_m \mathds{1}_{y^{t}_i \neq y^{t,m}_i} \right. \\
+&+\left.\frac{1}{\gamma}\sum_{\mathbf{y}^{t+1}} \beta^{t+1}(\mathbf{y^{t+1}}) p(\mathbf{x}^{t+1}|\mathbf{y}^{t+1}) \log p(y^{t+1}_i|y^{t}_i)  \right.\\
+&+ \left.  \sum_{\mathbf{y}^{t-1}} \alpha^{t-1}(\mathbf{y}^{t-1}) \log p(y^t_i|y^{t-1}_i) \right)
+\end{aligned}
+\label{divoptLOP}
+\end{equation}
+Where $\mathds{1}_A$ is an indicator function, and it is $1$ when $A$ is true and $0$ otherwise. Thus, the final optimization problem in (\ref{divoptLOP}) is equivalent to finding the MAP solution of a CRF with modified energy function. Moreover, we solve it by using the original inference method (Mixed Integer Programming) following \cite{hemaIJRR}.
+
+\section{Supplementary Results}
+\subsection{Computational-Efficiency of the Inference}
+We evaluated the computational-efficiency of our algorithm experimentally by recording its run-time. While recording the run-time, we did not include the feature extraction and pre-processing times since feature extraction and pre-processing steps are identical for all the competing algorithms. In other words, the recorded numbers are the inference time of the algorithms. We perform our experiments on an Intel i7 3.0 GHz laptop with 6Gb RAM running Ubuntu operating system using Python programming language. While implementing the algorithms, we only used a single core. Therefore, optimizing and parallelizing the code will give future gains.
+
+\noindent\textbf{Inference time during detection:}
+We recorded the runtime of the inference algorithm for each temporal segment while estimating the belief for observed frames in the detection setting. We present the results in Table~\ref{speed1}.
+
+Since the optimization algorithm, we define in (main paper 8) uses the inference procedure repeatedly for each sample, we expect to have a constant \emph{number of diverse samples} multiplicative factor in our computation time. As shown in Table~\ref{speed1}, resulting inference time is approximately ten times the MAP solution although the belief is over $M=15$ diverse samples. We believe this is due to the effective initialization of the mixed integer program with the previous results while iteratively computing the samples. Moreover, temporal segments are longer than 1 second long hence the resulting algorithm is still real-time.
+\begin{table}[h!]
+  \centering
+  \vspace{-2mm}
+\caption{Computation time for computing a belief over $M=15$ samples per temporal segment excluding pre-processing.}
+\vspace{-2mm}
+\resizebox{\columnwidth}{!}{
+  \begin{tabular}{|cc|cc|}
+    \hline
+  MAP Sol. \cite{hemaIJRR} \;  & \; $30ms$    \; \; & \; \;  Full Belief \;  & \;   $367ms$ \\ \hline
+\end{tabular}}
+  \vspace{-1mm}
+  \label{speed1}
+\end{table}
+
+\noindent\textbf{Inference time during anticipation:}
+We experiment over the 3 seconds into the future anticipation setting and summarize the results in the Table~\ref{speed}. We observed that our method had average computation time of $1.41s$ and \cite{hemaAnt} had average computation time of $34.1s$. This behavior is the result of efficient and accurate sampling of the belief space. Since our samples are more accurate, we need fewer samples than ATCRF \cite{hemaAnt}. Hence, our computation time is significantly better. Indeed, our inference algorithm for anticipation is operating at about 2X real-time.
+\begin{table}[h!]
+  \centering
+  \vspace{-2mm}
+\caption{Computation time for anticipating 3 seconds in the future excluding pre-processing.}
+\vspace{-2mm}
+\resizebox{\columnwidth}{!}{
+  \begin{tabular}{|cc|cc|}
+    \hline
+  ATCRF \cite{hemaAnt} \; \; & \; \; 34.1s  \; \;  \; & \; \; \;  rCRF \; \; & \; \;  1.41s \\ \hline
+\end{tabular}}
+  \vspace{-1mm}
+  \label{speed}
+\end{table}
+
+%\subsection{More on the Effect of Anticipation Horizon}
+%In addition to the analysis over the effect of anticipation horizon on the accuracy of the object affordance, here we also present the effect of the anticipation horizon on the accuracy of the activity. We computed the average micro-precision of our method and competing ones for anticipation horizons between 1 and 10 seconds and plotted in Figure~\ref{antHor}. General trend of the accuracy curve in the Figure~\ref{antHor} is similar to the object affordance one in the main paper. Therefore, the accuracy over the activity also suggests that recursive modeling is necessary for the belief estimation. On the other hand, one major difference is that all algorithms have similar accuracy values over activities whereas the accuracy over the object affordances varies significantly among the algorithms. We believe this is due to the dimensionality of the space. Activity space has dimension $10^{T}$ whereas the object affordance space has dimension $12^{T\cdot M}$ where $T$ is the length of the video and $M$ is the number of objects. Since the dimension of the object affordance space is significantly larger, recursive modeling and diversity is more crucial.
+\subsection{More Visual Results}
+We also include additional visual results for activity anticipation in Figure~\ref{abcd} covering various environments. Similar to the visual results in the main paper, we anticipate four temporal segments into the future. Each segment is between 1 to 3 seconds long and the activity at the middle of the segment is anticipated via rCRF using the rest of the video. We present the belief of each anticipated segment as well as the middle frame of the segment. Please note that the visual frames are not visible to the algorithm and only included for evaluation purposes.
+\input{long2}
+
+As shown in Figure~\ref{abcd}, anticipated belief is highly accurate. In the first row, the subject is moving the apple, and our algorithm anticipates the next activity accurately as eating. For its consecutive segment, our algorithm relies on the periodic activity of moving and eating/drinking. Hence, it anticipates that the activity following moving should be eating or drinking. In the third row, the initial belief is flatter. Hence, consecutive beliefs are flatter and less informative yet accurate. Moreover, in the fifth row, our algorithm accurately anticipates that box need to be placed after being moved.
+
+%\clearpage
+{\small
+\bibliography{shortstrings,anticipation_divmrf}
+\bibliographystyle{plainnat}
+
+}
+
+\end{document}

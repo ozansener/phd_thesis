@@ -1,0 +1,37 @@
+% !TEX root = anticipation_divmrf.tex
+\section{Background and Related Work}
+\label{relwork}
+%\vspace{\sectionReduceTop}
+%\vspace{1mm}
+\noindent
+{\bf Bayesian Recursive Filtering:}
+\label{parf}
+Estimating a belief over variables of interest from partial observations is a widely studied problem \cite{thrunBook}. Sequential Monte Carlo (SMC) ---aka \emph{particle filter}--- is typically used to estimate beliefs in high-dimensional cases. SMC methods represent the belief as a set of samples and we refer the reader to \cite{meanFieldBook} for rigorous analysis.
+
+SMC methods are not directly applicable to spaces like CRF since the number of samples required is intractably high. One solution to this problem is the Rao-Blackwellised particle filter \cite{raob}. It uses a partition of the state variables $\bf{y}$ into two set of variables $\bf{y}_1$ and $\bf{y}_2$ such that the variables in one partition $\bf{y}_2$ can be estimated using the partition $\bf{y}_1$. Then Rao-Blackwellised particle filter \cite{raob} estimates the $\bf{y}_1$ via SMC and directly estimates $\bf{y}_2$ using $\bf{y}_1$. However, for our problem, we are not aware of any state decomposition which enables Rao-Blackwellised particle filter. Although there are discrimantive extensions of Bayesian models like recursive least squares\cite{sarkka}, in this paper we only consider the states represented by CRFs. Moreover, we are not aware of any Bayesian smoothing formulation applied over CRFs.
+
+One tractable application of the SMC framework to the CRF based scene analysis problems is the ATCRF \cite{hemaAnt} model. ATCRF \cite{hemaAnt} uses a set of heuristics to sample the particles. However, ATCRF faces the problem of computational limitations and requires computationally intractable number of samples for anticipation. We follow the Bayesian filtering theory and efficiently estimate the belief.
+
+%\vspace{2mm}
+\noindent
+{\bf Structured Diversity and Variants of CRFs:}
+CRFs are widely used to solve activity analysis problems \cite{siminchi2005,quattoni2007} in a discriminative setting. CRF models the conditional likelihood of the state given the observations, and the MAP solution can be found. Although this setting is powerful, it does not give any information about the belief other than the MAP state.
+
+Other than the MAP solution, it is also tractable to compute the modes of the CRF \cite{divmbest,mbest,mmode}. These modes can be considered as an approximate state space, and the belief can be computed only for them. Indeed, this claim is empirically validated in many problems like parameter learning \cite{mlparam}, empirical MBR \cite{embr} and discrimantive re-ranking \cite{rerank}.
+
+Among the aforementioned approaches, Div-M-Best \cite{divmbest} is a method applicable to the sequential information. \cite{divmbest} starts by dividing the video into a set of frames and computes the diverse-most-likely solutions of each frame independently. Then, it combines the results via the temporal relations. On the contrary, we formulate the problem as recursive Bayesian smoothing and compute the samples based on temporal relations. Formally, given state variables $\mathbf{y}^1,\ldots,\mathbf{y}^T$ and observations $\mathbf{x}^1,\ldots,\mathbf{x}^T$, we directly sample $p(\mathbf{y}^t|\mathbf{x}^1,\ldots,\mathbf{x}^T)$, whereas, \cite{divmbest} samples $p(\mathbf{y}^t|\mathbf{x}^t)$. Since our sampling procedure uses the entire video, our samples are more accurate.
+
+There are variants of CRFs that rely on sequential models as well such as, Dynamic CRF (dCRF) \cite{dcrf}, Infinite Hidden CRF \cite{ihcrf}, Gaussian Process Latent CRF \cite{gpcrf} and Hierarchical Semi-Markov CRF (HSCRF). Although they are applicable to videos, we are not aware of any tractable method to compute a belief over any of the aforementioned graphical model.
+
+DCRF \cite{ddcrf} learns the observation likelihood --$p(\mathbf{x^t}|\mathbf{y^t})$-- by using the low-dimensional nature of the features and follows Bayesian filtering. Since our features have very high-dimension (for $N$ objects, we have $58N+20N^2+103$ dimensional features), DCRF \cite{ddcrf} is not directly applicable. However, it is possible to learn $p(\mathbf{y^t}|\mathbf{x^t})$ and \emph{approximately} use the DCRF formulation by assuming observation and label likelihoods are equal. Moreover, This approach can be shown equivalent to finding local maximum of energy function defined by \cite{hemaIJRR} following the formulation of Fox et al \cite{foxThesis}.
+
+It is also common to compute a belief over latent nodes as in the case of infinte hidden CRF \cite{ihcrf} and Gaussian Process Latent CRF\cite{gpcrf}. However, they are not directly applicable to our problem since they can compute a belief only over the latent node. CRF-Filter \cite{crffilter} is a closely related approach which uses CRFs in a particle filtering scenario. However, it is based on sampling of a low dimensional state space and it is not applicable to our rich model either.
+
+%\vspace{2mm}
+\noindent
+{\bf Human Activity Detection and Anticipation:} Early works relied solely on human poses. These works range from jointly segmenting and recognizing sub-activities \cite{hoai2011,shi2011} to choosing a relevant model out of activity models \cite{pyry2012}. Main limitation of these methods is that they do not use the object information. Some methods successfully model and use the relations of the human-poses and objects in the scene \cite{davis2009,feifei2010,jiang2012,hall}. However, a significant drawback of these works is missing the fact that object affordance is more important than object types for activities \cite{gibson1979}. Indeed, object affordance based models had higher performance (e.g., \cite{hemaIJRR}). A recent work modelled human activities with latent models \cite{latentIcra} and also handled the disagreements among the activity annotations \cite{rss2014}.
+
+Another drawback of these methods is the requirement of the entire activity. Detecting the activity in its early stages is especially crucial for assistive robotics and surveillance systems. Although a few recent work adress the problem of activity detection with partial/early information \cite{torre2012,ryoo2011}, these works do not perform anticipation. There are a few recent works addressing \emph{what human will perform next} by using trajectory prediction. It is possible to predict the trajectory of the human  using inverse reinforcement learning in 2D \cite{ziebart2009,kuderer2012,kitani2012} or 3D \cite{dragan2012}. However, these models rely on the low-dimensional structure of the 2D/3D coordinate space and therefore they do not apply to rich models like CRF.
+
+Recent work on anticipatory temporal CRF \cite{hemaAnt} considers an anticipation with a CRF model. It anticipates the future via augmenting set of possible future observations to the CRF. It is also extended with an improved human motion model based on a Gaussian process \cite{gpcrf}. However, their accuracy significantly drops for a long anticipation horizon since they fail to represent the uncertainty. Our method overcomes these problems by recursively estimating a full belief.
+%\vspace{\sectionReduceBot}

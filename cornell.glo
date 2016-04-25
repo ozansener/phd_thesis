@@ -1,0 +1,14 @@
+\glossaryentry{v2.0> =General:>Clarification of copyright / public domain issues in documentation - thanks to T. Joseph W. Lazio}{5}
+\glossaryentry{v2.0> =General:>Added latexheadings and cornellheadings options}{9}
+\glossaryentry{v2.5> =General:>sdh4: Added halfcornellheadings and smallerheadings options. Changed halfcornellheadings and smallerheadings to the default.}{9}
+\glossaryentry{v2.6> =General:>Changed to only override when \textsf  {final} is set}{9}
+\glossaryentry{v1.0d>prelim@contents=\verb!*+\prelim@contents+:>Changed \#\# to \# as per change in \LaTeX  source}{10}
+\glossaryentry{v2.6> =General:>Only force \textsf  {12pt} when \textsf  {final} is set}{11}
+\glossaryentry{v2.0> =General:>Left margin set to 1.6 inch, others to 1.1 inch}{13}
+\glossaryentry{v2.0> =General:>Page numbers 0.6 inch from top/bottom of page}{13}
+\glossaryentry{v1.1> =General:>Replaced openbib conditional with single command as per changes in December 95 \LaTeXe  source release}{14}
+\glossaryentry{v1.0> =General:>Added degreefield command}{15}
+\glossaryentry{v1.0> =General:>Added ifphd switches for two types of cover page}{15}
+\glossaryentry{v2.0> =General:>Added makepublicdomain command}{17}
+\glossaryentry{v1.0> =General:>Added ifphd switches for two types of abstract}{17}
+\glossaryentry{v2.0> =General:>Fixed spacing on abstract page}{17}

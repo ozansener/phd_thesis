@@ -1,0 +1,109 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{times}
+
+% numbers option provides compact numerical references in the text.
+\usepackage[numbers]{natbib}
+\usepackage{multicol}
+\usepackage[bookmarks=true]{hyperref}
+
+\usepackage{graphicx} % more modern
+%\usepackage{epsfig} % less modern
+\usepackage{subfigure}
+
+% For algorithms
+\usepackage[it,small]{caption}
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsmath}
+\usepackage{amssymb}
+% Include other packages here, before hyperref.
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{wrapfig}
+
+\newcommand{\argmax}{\operatorname{arg\,max}}
+\newcommand{\argmin}{\operatorname{arg\,min}}
+\newcommand{\todo}[1]{\textcolor{blue}{\textbf{#1}}}
+\newtheorem{mydef}{Definition}
+
+
+\graphicspath{{./images/}}
+\usepackage{multirow}
+\input{space_saver}
+
+
+\pdfinfo{
+   /Author (Ozan Sener, Ashutosh Saxena)
+   /Title  (rCRF: Recursive Belief Estimation over CRFs in RGB-D Activity Videos)
+   /CreationDate (D:20101201120000)
+   /Subject (CRF)
+   /Keywords (CRF,Activity,RGB-D, Bayesian Estimation)
+}
+
+\begin{document}
+
+% paper title
+\title{rCRF: Recursive Belief Estimation over CRFs in RGB-D Activity Videos}
+
+% You will get a Paper-ID when submitting a pdf file to the conference system
+%\author{Author Names Omitted for Anonymous Review. Paper-ID 63}
+\author{
+\authorblockN{Ozan Sener}
+\authorblockA{School of Electrical \& Computer Eng. \\ Cornell University}
+\and
+\authorblockN{Ashutosh Saxena}
+\authorblockA{Department of Computer Science \\ Cornell University}
+}
+
+
+%\author{\authorblockN{Michael Shell}
+%\authorblockA{School of Electrical and\\Computer Engineering\\
+%Georgia Institute of Technology\\
+%Atlanta, Georgia 30332--0250\\
+%Email: mshell@ece.gatech.edu}
+%\and
+%\authorblockN{Homer Simpson}
+%\authorblockA{Twentieth Century Fox\\
+%Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\and
+%\authorblockN{James Kirk\\ and Montgomery Scott}
+%\authorblockA{Starfleet Academy\\
+%San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212\\
+%Fax: (888) 555--1212}}
+
+\maketitle
+
+\input{abstract}
+
+\IEEEpeerreviewmaketitle
+
+\input{intro}
+
+\input{relatedwork}
+
+%\input{background}
+% \section{Belief over Sub-Activities and Object Affordances}
+\input{overview}
+\input{theory}
+\input{activity_detection}
+\input{experiments}
+
+\input{conclusion}
+
+\vspace{5mm}
+
+\noindent\textbf{Acknowledgement.} We thank Hema Koppula for helpful discussions. This research was funded in part by Microsoft
+Faculty Fellowship (to Saxena), NSF Career award (to
+Saxena) and Army Research Office.
+
+% \clearpage
+{
+\small
+\bibliography{shortstrings,anticipation_divmrf}
+\bibliographystyle{plainnat}
+}
+
+\end{document}

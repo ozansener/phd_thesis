@@ -1,0 +1,282 @@
+\begin{thebibliography}{47}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Batra et~al.(2012)Batra, Yadollahpour, Guzman-Rivera, and
+  Shakhnarovich]{divmbest}
+D. Batra, P. Yadollahpour, A. Guzman-Rivera, and G.  Shakhnarovich.
+\newblock Diverse m-best solutions in markov random fields.
+\newblock In \emph{ECCV} 2012.
+
+\bibitem[Bousmalis et~al.(2013)Bousmalis, Zafeiriou, Morency, and
+  Pantic]{ihcrf}
+K. Bousmalis, S. Zafeiriou, L~Morency, and M. Pantic.
+\newblock Infinite hidden conditional random fields for human behavior analysis.
+\newblock \emph{Neural Networks and Learning Systems, IEEE Trans}, 24\penalty0
+  (1):\penalty0 170--177, 2013.
+
+\bibitem[Chen et~al.(2013)Chen, Kolmogorov, Zhu, Metaxas, and Lampert]{mmode}
+C. Chen, V. Kolmogorov, Y. Zhu, D. Metaxas, and C. Lampert.
+\newblock Computing the m most probable modes of a graphical model.
+\newblock In \emph{AISTATS} 2013.
+
+\bibitem[Dalal and Triggs(2005)]{dalal}
+N. Dalal and B. Triggs.
+\newblock Histograms of oriented gradients for human detection.
+\newblock In \emph{CVPR} 2005.
+
+\bibitem[Del~Moral(2013)]{meanFieldBook}
+P. Del~Moral.
+\newblock \emph{Mean field simulation for Monte Carlo integration}.
+\newblock CRC Press, 2013.
+
+\bibitem[Doucet et~al.(2000)Doucet, De~Freitas, Murphy, and Russell]{raob}
+A. Doucet, N. De~Freitas, K. Murphy, and S. Russell.
+\newblock Rao-blackwellised particle filtering for dynamic bayesian networks.
+\newblock In \emph{UAI}, 2000.
+
+\bibitem[Dragan and Srinivasa(2008)]{dragan2012}
+A.~D Dragan and S.~S Srinivasa.
+\newblock Formalizing assistive teleoperation.
+\newblock \emph{RSS}, 2008.
+
+\bibitem[Fox(2009)]{foxThesis}
+E.B. Fox.
+\newblock \emph{Bayesian Nonparametric Learning of Complex Dynamical
+  Phenomena}.
+\newblock Ph.{D}. thesis, MIT, Cambridge, MA, 2009.
+
+\bibitem[Geman and Geman(1984)]{geman}
+S. Geman and D. Geman.
+\newblock Stochastic relaxation, gibbs distributions, and the bayesian
+  restoration of images.
+\newblock \emph{IEEE PAMI}, \penalty0 (6):\penalty0 721--741, 1984.
+
+\bibitem[Gibson(1986)]{gibson1979}
+J.J. Gibson.
+\newblock \emph{The ecological approach to visual perception}.
+\newblock Psychology Press, 1986.
+
+\bibitem[Gupta et~al.(2009)Gupta, Kembhavi, and Davis]{davis2009}
+A. Gupta, A. Kembhavi, and L.~S. Davis.
+\newblock Observing human-object interactions: Using spatial and functional
+  compatibility for recognition.
+\newblock \emph{IEEE PAMI}, 31\penalty0 (10):\penalty0 1775--1789, 2009.
+
+\bibitem[Hammersley and Clifford(1971)]{hc1971}
+J.~M. Hammersley and P. Clifford.
+\newblock Markov fields on finite graphs and lattices.
+\newblock 1971.
+
+\bibitem[Hoai and De~la Torre(2012)]{torre2012}
+M. Hoai and F. De~la Torre.
+\newblock Max-margin early event detectors.
+\newblock In \emph{CVPR}, 2012.
+
+\bibitem[Hoai et~al.(2011)Hoai, Lan, and {De la Torre}]{hoai2011}
+M. Hoai, Z-Z. Lan, and F. {De la Torre}.
+\newblock Joint segmentation and classification of human actions in video.
+\newblock In \emph{CVPR}, 2011.
+
+\bibitem[Hu et~al.(2014{\natexlab{a}})Hu, Englebienne, Lou, and
+  Kr{\"o}se]{latentIcra}
+N. Hu, G. Englebienne, Z. Lou, and B. Kr{\"o}se.
+\newblock Learning latent structure for activity recognition.
+\newblock In \emph{ICRA}, 2014.
+
+\bibitem[Hu et~al.(2014{\natexlab{b}})Hu, Lou, Englebienne, and
+  Kr{\"o}se]{rss2014}
+N. Hu, Z. Lou, G. Englebienne, and B. Kr{\"o}se.
+\newblock Learning to recognize human activities from soft labeled data.
+\newblock \emph{RSS}, 2014.
+
+\bibitem[Jiang and Saxena(2014)]{gpcrf}
+Y. Jiang and A. Saxena.
+\newblock Modeling high-dimensional humans for activity anticipation using
+  gaussian process latent crfs.
+\newblock In \emph{RSS}, 2014.
+
+\bibitem[Jiang et~al.(2012)Jiang, Lim, and Saxena]{jiang2012}
+Y. Jiang, M. Lim, and A. Saxena.
+\newblock Learning object arrangements in 3d scenes using human context.
+\newblock In \emph{ICML}, 2012.
+
+\bibitem[Jiang et~al.(2013)Jiang, Koppula, and Saxena]{hall}
+Y. Jiang, H. Koppula, and A. Saxena.
+\newblock Hallucinated humans as the hidden context for labeling 3d scenes.
+\newblock In \emph{CVPR}, 2013.
+
+\bibitem[Kitani et~al.(2012)Kitani, Ziebart, Bagnell, and Hebert]{kitani2012}
+K.~M. Kitani, B.~D. Ziebart, J.~A. Bagnell, and M. Hebert.
+\newblock Activity forecasting.
+\newblock In \emph{Proc. ECCV}, 2012.
+
+\bibitem[Koppula et~al.(2014)Koppula, Jain, and Saxena]{hemaISER}
+H. Koppula, A. Jain, and A. Saxena.
+\newblock Anticipatory planning for humanrobot teams.
+\newblock ISER, 2014.
+
+\bibitem[Koppula and Saxena(2013)]{hemaAnt}
+H.~S Koppula and A. Saxena.
+\newblock Anticipating human activities using object affordances for reactive
+  robotic response.
+\newblock \emph{RSS}, 2013.
+
+\bibitem[Koppula and Saxena(2014)]{hemaECCV}
+H.~S Koppula and A. Saxena.
+\newblock Physically grounded spatio-temporal object affordances.
+\newblock In \emph{ECCV}, pages 831--847. Springer
+  International Publishing, 2014.
+
+\bibitem[Koppula et~al.(2013)Koppula, Gupta, and Saxena]{hemaIJRR}
+H.~S. Koppula, R. Gupta, and A. Saxena.
+\newblock Learning human activities and object affordances from rgb-d videos.
+\newblock \emph{IJRR}, 32\penalty0 (8):\penalty0 951--970, 2013.
+
+\bibitem[Kuderer et~al.(2012)Kuderer, Kretzschmar, Sprunk, and
+  Burgard]{kuderer2012}
+M. Kuderer, H. Kretzschmar, C. Sprunk, and W. Burgard.
+\newblock Feature-based prediction of trajectories for socially compliant
+  navigation.
+\newblock In \emph{RSS}, 2012.
+
+\bibitem[Lan et~al.(2014)Lan, Chen, and Savarese]{tian}
+T. Lan, T.-C. Chen, and S. Savarese.
+\newblock A hierarchical representation for future action prediction.
+\newblock In \emph{Proc. ECCV}, 2014.
+
+\bibitem[Lawler(1972)]{mbest}
+E.~L. Lawler.
+\newblock A procedure for computing the k best solutions to discrete
+  optimization problems and its application to the shortest path problem.
+\newblock \emph{Management Science}, 18\penalty0 (7):\penalty0 401--405, 1972.
+
+\bibitem[Limketkai et~al.(2007)Limketkai, Fox, and Liao]{crffilter}
+B. Limketkai, D. Fox, and L. Liao.
+\newblock Crf-filters: Discriminative particle filters for sequential state
+  estimation.
+\newblock In \emph{ICRA}, 2007.
+
+\bibitem[Mainprice and Berenson(2013)]{collob2}
+J. Mainprice and D. Berenson.
+\newblock Human-robot collaborative manipulation planning using early
+  prediction of human motion.
+\newblock In \emph{IROS}, 2013.
+
+\bibitem[Matikainen et~al.(2012)Matikainen, Sukthankar, and Hebert]{pyry2012}
+P. Matikainen, R. Sukthankar, and M. Hebert.
+\newblock Model recommendation for action recognition.
+\newblock In \emph{CVPR}, 2012.
+
+\bibitem[Meier et~al.(2013)Meier, Globerson, and Sha]{mlparam}
+F. Meier, A. Globerson, and F. Sha.
+\newblock The more the merrier: Parameter learning for graphical models with
+  multiple maps.
+\newblock In \emph{ICML Workshop on Interactions between Inference and
+  Learning}, 2013.
+
+\bibitem[Premachandran et~al.(2014)Premachandran, Tarlow, and Batra]{embr}
+V. Premachandran, D. Tarlow, and D. Batra.
+\newblock Empirical minimum bayes risk prediction: How to extract an extra
+  few\% performance from vision models with just three more parameters.
+\newblock In \emph{CVPR}, 2014.
+
+\bibitem[Quattoni et~al.(2007)Quattoni, Wang, Morency, Collins, Darrell, and
+  Csail]{quattoni2007}
+A. Quattoni, S. Wang, L.-P. Morency, M. Collins, T. Darrell, and M. Csail.
+\newblock Hidden-state conditional random fields.
+\newblock \emph{IEEE PAMI}, 29\penalty0 (10):\penalty0 1848--1852, 2007.
+
+\bibitem[Rabiner(1989)]{hmm}
+L. Rabiner.
+\newblock A tutorial on hidden markov models and selected applications in
+  speech recognition.
+\newblock \emph{Proceedings of the IEEE}, 77\penalty0 (2):\penalty0 257--286,
+  1989.
+
+\bibitem[Rohrbach et~al.(2012)Rohrbach, Amin, Andriluka, and
+  Schiele]{mpi_cooking}
+M. Rohrbach, S. Amin, M. Andriluka, and B. Schiele.
+\newblock A database for fine grained activity detection of cooking activities.
+\newblock In \emph{CVPR}, 2012.
+
+\bibitem[Ryoo(2011)]{ryoo2011}
+MS~Ryoo.
+\newblock Human activity prediction: Early recognition of ongoing activities
+  from streaming videos.
+\newblock In \emph{ICCV}, 2011.
+
+\bibitem[S{\"a}rkk{\"a}(2013)]{sarkka}
+S. S{\"a}rkk{\"a}.
+\newblock \emph{Bayesian filtering and smoothing}, volume~3.
+\newblock Cambridge University Press, 2013.
+
+\bibitem[Shi et~al.(2011)Shi, Cheng, Wang, and Smola]{shi2011}
+Q. Shi, L.~Cheng, L.~Wang, and A. Smola.
+\newblock Human action segmentation and recognition using discriminative
+  semi-markov models.
+\newblock \emph{IJCV}, 93\penalty0 (1):\penalty0 22--32, 2011.
+
+\bibitem[Sminchisescu et~al.(2006)Sminchisescu, Kanaujia, and
+  Metaxas]{siminchi2005}
+C. Sminchisescu, A. Kanaujia, and D. Metaxas.
+\newblock Conditional models for contextual human motion recognition.
+\newblock \emph{CVIU}, 104\penalty0 (2):\penalty0 210--220, 2006.
+
+\bibitem[Sutton et~al.(2007)Sutton, McCallum, and Rohanimanesh]{dcrf}
+C. Sutton, A. McCallum, and K. Rohanimanesh.
+\newblock Dynamic conditional random fields: Factorized probabilistic models
+  for labeling and segmenting sequence data.
+\newblock \emph{JMLR}, 8:\penalty0 693--723, 2007.
+
+\bibitem[Thrun et~al.(2005)Thrun, Burgard, and Fox]{thrunBook}
+S. Thrun, W. Burgard, and D. Fox.
+\newblock \emph{Probabilistic robotics}.
+\newblock MIT press, 2005.
+
+\bibitem[Tsochantaridis et~al.(2004)Tsochantaridis, Hofmann, Joachims, and
+  Altun]{ssvm}
+I. Tsochantaridis, T. Hofmann, T. Joachims, and Y. Altun.
+\newblock Support vector machine learning for interdependent and structured
+  output spaces.
+\newblock In \emph{ICML}, 2004.
+
+\bibitem[Wang and Ji(2005)]{ddcrf}
+Y. Wang and Q. Ji.
+\newblock A dynamic conditional random field model for object segmentation in
+  image sequences.
+\newblock In \emph{CVPR}, 2005.
+
+\bibitem[Wang et~al.(2013)Wang, M{\"u}lling, Deisenroth, Amor, Vogt,
+  Sch{\"o}lkopf, and Peters]{collob1}
+Z. Wang, K. M{\"u}lling, M.~P. Deisenroth, H.~B. Amor, D.
+  Vogt, B. Sch{\"o}lkopf, and J. Peters.
+\newblock Probabilistic movement modeling for intention inference in
+  human--robot interaction.
+\newblock \emph{IJRR}, 32\penalty0
+  (7):\penalty0 841--858, 2013.
+
+\bibitem[Yadollahpour et~al.(2013)Yadollahpour, Batra, and
+  Shakhnarovich]{rerank}
+P. Yadollahpour, D. Batra, and G. Shakhnarovich.
+\newblock Discriminative re-ranking of diverse segmentations.
+\newblock \emph{CVPR}, 2013.
+
+\bibitem[Yao and Fei-Fei(2010)]{feifei2010}
+B. Yao and L.~Fei-Fei.
+\newblock Modeling mutual context of object and human pose in human-object
+  interaction activities.
+\newblock In \emph{CVPR}, 2010.
+
+\bibitem[Ziebart et~al.(2009)Ziebart, Ratliff, Gallagher, Mertz, Peterson,
+  Bagnell, Hebert, Dey, and Srinivasa]{ziebart2009}
+B.~D Ziebart, N. Ratliff, G> Gallagher, C. Mertz, K.
+  Peterson, J.~A Bagnell, M. Hebert, A.~K Dey, and S.
+  Srinivasa.
+\newblock Planning-based prediction for pedestrians.
+\newblock In \emph{IROS}, 2009.
+
+\end{thebibliography}

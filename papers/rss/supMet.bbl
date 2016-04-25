@@ -1,0 +1,26 @@
+\begin{thebibliography}{3}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Batra et~al.(2012)Batra, Yadollahpour, Guzman-Rivera, and
+  Shakhnarovich]{divmbest}
+Dhruv Batra, Payman Yadollahpour, Abner Guzman-Rivera, and Gregory
+  Shakhnarovich.
+\newblock Diverse m-best solutions in markov random fields.
+\newblock In \emph{Proc. ECCV}, pages 1--16. Springer, 2012.
+
+\bibitem[Koppula and Saxena(2013)]{hemaAnt}
+Hema~S Koppula and Ashutosh Saxena.
+\newblock Anticipating human activities using object affordances for reactive
+  robotic response.
+\newblock \emph{RSS}, 2013.
+
+\bibitem[Koppula et~al.(2013)Koppula, Gupta, and Saxena]{hemaIJRR}
+Hema~Swetha Koppula, Rudhir Gupta, and Ashutosh Saxena.
+\newblock Learning human activities and object affordances from rgb-d videos.
+\newblock \emph{IJRR}, 32\penalty0 (8):\penalty0 951--970, 2013.
+
+\end{thebibliography}
