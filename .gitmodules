@@ -1,3 +1,6 @@
 [submodule "papers/ijcv"]
 	path = papers/ijcv
 	url = git@github.com:ozansener/TPAMI_storyline.git
+[submodule "papers/da"]
+	path = papers/da
+	url = git@github.com:ozansener/domain_transduction.git
