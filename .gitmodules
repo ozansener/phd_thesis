@@ -1,0 +1,3 @@
+[submodule "papers/ijcv"]
+	path = papers/ijcv
+	url = git@github.com:ozansener/TPAMI_storyline.git
