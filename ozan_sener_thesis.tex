@@ -1,0 +1,132 @@
+\documentclass[phd,tocprelim]{cornell}
+\let\ifpdf\relax
+
+%
+% tocprelim option must be included to put the roman numeral pages in the
+% table of contents
+%
+% The cornellheadings option will make headings completely consistent with
+% guidelines.
+%
+% This sample document was originally provided by Blake Jacquot, and
+% fixed up by Andrew Myers.
+%
+%Some possible packages to include
+\usepackage{hyperref}
+
+\usepackage{graphicx,pstricks}
+\usepackage{graphics}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{moreverb}
+\usepackage{wrapfig}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{hangcaption}
+\usepackage{txfonts}
+\usepackage{palatino}
+\usepackage{epigraph}
+\usepackage{dsfont}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage[numbers]{natbib}
+
+
+\DeclareSymbolFont{extraup}{U}{zavm}{m}{n}
+\DeclareMathSymbol{\varheart}{\mathalpha}{extraup}{86}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\newcommand{\etal}{\textit{et al}.}
+\newcommand{\ie}{\textit{i}.\textit{e}.}
+\newcommand{\eg}{\textit{e}.\textit{g}.}
+
+%if you're having problems with overfull boxes, you may need to increase
+%the tolerance to 9999
+\tolerance=9999
+
+\bibliographystyle{plain}
+%\bibliographystyle{IEEEbib}
+
+\newcommand{\robobrain}{RoboBrain}
+\newtheorem{example}{\hspace*{-1em}\textbf{Example}}
+
+\renewcommand{\caption}[1]{\singlespacing\hangcaption{#1}\normalspacing}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.75}
+
+%\title {Learning to represent unstructured large-scale visual data for robot perception}
+%\title {Learning representations from unstructured large-scale visual data}
+\title {Learning to represent large-scale visual data for robot perception}
+
+
+\author {Ozan \c{S}ener}
+\conferraldate {December}{2016}
+\degreefield {Ph.D.}
+\copyrightholder{Ozan \c{S}ener}
+\copyrightyear{2016}
+
+\graphicspath{{./images/},{./papers/ijcv/images/},{./Image/}}
+
+
+\begin{document}
+
+\maketitle
+\makecopyright
+
+\begin{abstract}
+Your abstract goes here. Make sure it sits inside the brackets. If not,
+your biosketch page may not be roman numeral iii, as required by the
+graduate school.
+\end{abstract}
+
+\begin{biosketch}
+Your biosketch goes here. Make sure it sits inside
+the brackets.
+\end{biosketch}
+
+\begin{dedication}
+To the Woodstock and the musicians of 60s.
+\end{dedication}
+
+\begin{acknowledgements}
+\input{ack}
+\end{acknowledgements}
+
+\contentspage
+\tablelistpage
+\figurelistpage
+
+\normalspacing \setcounter{page}{1} \pagenumbering{arabic}
+\pagestyle{cornell} \addtolength{\parskip}{0.5\baselineskip}
+
+\chapter{Introduction}
+\epigraph{Either the locks were too large, or the key was too small.}{\textit{Lewis Carroll\\ Alice's Adventures in Wonderland}}
+\input{intro}
+
+\chapter{Sensing at Scale - RoboBrain}
+\epigraph{Parents of young organic life forms should be warned, that towels can be harmful, if swallowed in large quantities.}{\textit{Douglas Adams\\ Hitchhiker's Guide to the Galaxy}}
+\input{rb}
+
+\chapter{Perception at Scale - Recursive Conditional Random Fields}
+\epigraph{---~ Alice: How long is forever? \\ ---~ White Rabbit: Sometimes, just one second.}{\textit{Lewis Carroll\\ Alice's Adventures in Wonderland}}
+\input{rcrf}
+
+
+\chapter{Learning at Scale - Multi-Domain, Multi-Modal Visual Learning}
+\epigraph{``And what is the use of a book,'' thought Alice, ``without pictures or conversation?''}{\textit{Lewis Carroll\\ Alice's Adventures in Wonderland}}
+\input{repr}
+
+
+\chapter{Conclusions}
+\epigraph{``Down, down, down. Would the fall never come to an end! I wonder how many miles I've''}{\textit{Lewis Carroll\\ Alice's Adventures in Wonderland}}
+\input{conc}
+
+\appendix
+\input{appx}
+
+\bibliography{ozan_sener_thesis, references, shortstrings}
+
+\end{document}
