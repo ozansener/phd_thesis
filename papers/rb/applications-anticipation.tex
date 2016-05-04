@@ -1,4 +1,4 @@
-% !TEX root = robobrain.tex
+% !TEX root = ../../ozan_sener_thesis.tex
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{./Image/anticipation_robobrain_pic.pdf}
@@ -13,7 +13,7 @@ The assistive robots working with humans should be able to understand human acti
 We now show how robots can query \robobrain{} and use the previous work by
 Koppula et al.~\citep{KoppulaRSS2013} for anticipating human actions.  
 In order to anticipate the future human actions, the authors~\citep{KoppulaRSS2013} learn parameters using their anticipatory algorithm, and using the learned parameters they anticipate the most likely \textit{future} object affordances and human trajectories. \robobrain{} serves anticipation \textit{as-a-service} by storing those learned parameters, object affordances and trajectories  as concepts in its graph. Figure~\ref{Fig:anticipation} illustrates a robot retrieving relevant information for anticipation. The robot first uses the following queries to retrieve the possible trajectories of an object:
-\vskip -.15in
+
 %\noindent \resizebox{\linewidth}{!}{
 %\begin{minipage}{\linewidth}
 {\small
@@ -26,11 +26,10 @@ In order to anticipate the future human actions, the authors~\citep{KoppulaRSS20
 &{\tt \hspace*{2cm} map (\lambda a \rightarrow {trajectories}\,\, a)  \,\, {affordances}\,\, o } \nonumber
 \end{align}
 %  \end{minipage}
-}\vskip -.05in
+}
 
 
 In the queries above, the robot first queries for the affordances of the object and then for each affordance it queries \robobrain{} for the trajectory parameters. Having retrieved all possible trajectories, the robot uses the learned parameters~\citep{KoppulaRSS2013} to anticipate the future human actions. Since the learned parameters are also stored in the \robobrain{} graph, the robot retrieves them using the following RQL queries:
-\vskip -.15in
 {\small
 \begin{align*}
 &{\tt {parents} \,\, n := fetch \,\, (v)\rightarrow [`HasParameters']\rightarrow  (\{handle:n\}) }\nonumber \\
@@ -41,7 +40,7 @@ In the queries above, the robot first queries for the affordances of the object 
 & {\tt {joint\_parameters} \,\, a_1 \,\, a_2\,\, := filter (\lambda u \rightarrow {Len\; parents}\,\, u = 2\,\, } \cr
 & {\tt \hspace*{2cm}  and\,\, u \,\, in \,\, {parameters}\,\, a_2)    \,\,{parameters}\,\, a_1 \nonumber}
 \end{align*}
-}\vskip -.05in
+}
 The queries above retrieves both independent and joint parameters for anticipating the object affordances and human activities. Detailed explanation of the query is given in Example \ref{ex:joint} of Section \ref{sec:raquel}
 
 

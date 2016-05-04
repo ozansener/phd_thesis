@@ -1,4 +1,4 @@
-% !TEX root = robobrain.tex
+% !TEX root = ../../ozan_sener_thesis.tex
 
 \begin{figure}[t]
 \centering
@@ -56,7 +56,7 @@ $$G^\star = split_{v_{s_1}} \circ merge_{v_{m_1},v_{m_2}} \circ \ldots \circ spl
 
 In the above equation $G^\star$ is the graph obtained after the inference. The goal of the inference steps is to modify the graph $G^\prime$ in a way that best explains the physical world. However, the graph that captures the real physical world is a  \textit{latent graph}, i.e., it is not directly observable.
 For  example, the latent information that \emph{``coffee is typically in a container"} is partially observed through
-many edges between the \emph{coffee} node and the nodes with \emph{container} images. Our graph construction can also be explained in a generative setting of having a latent graph with all the knowledge about physical word, and we only observe  noisy measurements in form of \textit{feeds}. In this paper, we abstract the algorithmic details of inference and focus on the overall ideas involved in \robobrain{}, its architecture, and its application to robotics.
+many edges between the \emph{coffee} node and the nodes with \emph{container} images. Our graph construction can also be explained in a generative setting of having a latent graph with all the knowledge about physical word, and we only observe  noisy measurements in form of \textit{feeds}. In this chapter, we abstract the algorithmic details of inference and focus on the overall ideas involved in \robobrain{}, its architecture, and its application to robotics.
 %system architecture and presenting the overall ideas in the RKE, and defer the details of inference algorithms and the latent graph to a later journal version.
 
 
@@ -84,5 +84,4 @@ CanPerformAction & human \emph{CanPerformAction} cutting \\
 SpatiallyDistributedAs & location of human is \emph{SpatiallyDistributedAs} \\
 IsHolonym & tree  \emph{IsHolonym} of leaf
 \end{tabular}
-\vskip -.2in
 \end{table}

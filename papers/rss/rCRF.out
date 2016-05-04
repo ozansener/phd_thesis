@@ -1,0 +1,12 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Background and Related Work}{}% 2
+\BOOKMARK [1][-]{section.3}{Overview}{}% 3
+\BOOKMARK [1][-]{section.4}{Belief Estimation with rCRF}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{Recursive Conditional Random Field}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{Computing the belief using an rCRF}{section.4}% 6
+\BOOKMARK [3][-]{subsubsection.4.2.1}{From p\(yt|xt\) to p\(xt|yt\)}{subsection.4.2}% 7
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Belief is a CRF}{subsection.4.2}% 8
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Belief via Diverse-Most-Likely Samples}{subsection.4.2}% 9
+\BOOKMARK [1][-]{section.5}{Human Activity Detection and Anticipation}{}% 10
+\BOOKMARK [1][-]{section.6}{Experimental Results}{}% 11
+\BOOKMARK [1][-]{section.7}{Conclusions}{}% 12

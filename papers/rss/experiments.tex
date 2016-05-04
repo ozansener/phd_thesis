@@ -1,8 +1,9 @@
-% !TEX root = rCRF.tex
-\section{Experimental Results}
+% !TEX root = ../../ozan_sener_thesis.tex
+\subsection{Experimental Results on Activity Detection}
 In order to experimentally evaluate the proposed rCRF model and the belief computation, we perform experiments on two applications. Firstly, we estimate a belief over the activity a human is performing and the affordances of the objects in the scene by using the RGB-D video. After computing the belief, we detect the most likely activity and affordance sequences and study the improvement in the detection accuracy. Secondly, we test the accuracy of the beliefs in the anticipation setting. Indeed, we show that it is possible to obtain high-quality detection and anticipation via rCRF.
 
 \input{longfigure}
+\input{long2}
 
 \noindent {\bf Data:} We use CAD-120 \cite{hemaIJRR} dataset in order to evaluate our method. CAD-120 dataset includes 120 RGB-D videos of four different subject performing activities \emph{reaching, moving, pouring, etc.} while interacting with objects having affordances \emph{reachable, movable, pourable, etc.}. There are 10 activity classes and 12 object affordance classes.
 
@@ -119,6 +120,8 @@ In order to see the effect of structural diversity on covering the output space,
 \caption{Precision vs. anticipation horizon for subject activities.}
 \label{objHor}
 \end{figure}
+
+
 
 \noindent {\bf Computationally-efficient inference:}
 We evaluated the computational efficiency by computing the average computation time for anticipating 3 second in the future via rCRF and the fastest available anticipation algorithm (the ATCRF\cite{hemaAnt}). Within our experiments, we did not include any pre-processing or feature extraction computation (they are same for all algorithms). Our experiments suggest that the rCRF is faster than \cite{hemaAnt} as shown in Table~\ref{speed}. Hence, rCRF model outperforms the state-of-the-art anticipation algorithm in terms of speed in addition to the accuracy.

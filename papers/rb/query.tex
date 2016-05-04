@@ -1,4 +1,4 @@
-% !TEX root = robobrain.tex
+% !TEX root = ../../ozan_sener_thesis.tex
 \section{Robot Query Library (RQL)}
 \label{sec:raquel}
 In this section we present the RQL query language,
@@ -34,14 +34,13 @@ explain some of these operations with an example.
 The RQL query to retrieve and sort all possible paths from the ${\tt{Human}}$ node to the ${\tt{Cup}}$ node.
 %\noindent \resizebox{\linewidth}{!}{
 %\begin{minipage}{\linewidth}
-\vskip -0.13in
 {\small
 \begin{align*}
  &{\tt paths }:= \;{\tt fetch (\{name:`Human'\})\rightarrow [r *] \rightarrow (\{name:`Cup'\})}\\
 & {\tt SortBy(\lambda P \rightarrow Belief \, P) \, paths} \\
 \end{align*}
 %\end{minipage}
-}\vskip -0.15in
+}
 
 In the example above, we first define a function ${\tt paths}$ which returns all  the paths from the node ${\tt Human }$ to the node ${\tt Cup }$ in the form of a list. The ${\tt SortBy}$ query first runs the ${\tt paths}$ function and then sorts, in decreasing order, all paths in the returned list using their beliefs.
 \end{example}
@@ -52,7 +51,6 @@ The programming construct functions serve to process the sub-graphs retrieved by
 
 \begin{example}
 The RQL query to retrieve affordances of all the objects that ${\tt{Human}}$ can use.
-\vskip -0.13in
 %\noindent \resizebox{\linewidth}{!}{
 %\begin{minipage}{\linewidth}
 {\small
@@ -62,7 +60,7 @@ The RQL query to retrieve affordances of all the objects that ${\tt{Human}}$ can
 &  {\tt map(\lambda u \rightarrow affordances \, u) \,  objects} \\
 \end{align*}
 %\end{minipage}
-}\vskip -0.15in
+}
 
 \noindent In this example, we illustrate the use of ${\tt map}$ construct. The ${\tt map}$ takes as input a function and a list, and then applies the function to every element of the list. More specifically, in the example above, the function ${\tt objects }$ retrieves the list of objects that the human can use. The ${\tt affordances }$ function takes as input an object and returns its affordances. In the last RQL query, the ${\tt map}$  applies the function ${\tt affordances}$ to the list returned by the function ${\tt objects}$.
 \end{example}
@@ -71,7 +69,6 @@ We now conclude this section with an expressive RQL query for retrieving \textit
 \begin{example}
 \label{ex:joint}
 The RQL query to retrieve the joint parameters shared between a set of nodes.
-\vskip -0.13in
 %\noindent \resizebox{\linewidth}{!}{
 %\begin{minipage}{\linewidth}
 {\small
@@ -85,7 +82,7 @@ The RQL query to retrieve the joint parameters shared between a set of nodes.
 & {\tt \hspace*{2cm}  u \,\, in \,\, {parameters}\,\, a_2)    \,\,{parameters}\,\, a_1 \nonumber}
 \end{align}
 %\end{minipage}
-}\vskip -0.01in
+}
 The query above uses the ${\tt filter}$ construct function and ${\tt Len}$ operation. The ${\tt filter}$ takes as input a list and a check condition, and returns only those items from the list that satisfies the input condition. The ${\tt Len}$ takes as input a list and returns the number of items in the list.
 In the query above, we first define a function ${\tt parents}$ which for a given input node returns its parent nodes. Then we define a function ${\tt parameters}$ which for a given input node returns its parameters. The third and the fourth queries are functions accepting one and two input nodes, respectively, and return the (joint) parameters that share an edge with every input node and not with any other node.
 \end{example}

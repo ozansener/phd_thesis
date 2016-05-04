@@ -18,12 +18,12 @@
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \citation{collob1,collob2,hemaISER}
 \citation{hemaAnt,gpcrf,hemaECCV,tian}
-\citation{hemaIJRR}
 \@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}}
 \newlabel{intro}{{I}{1}{Introduction}{section.1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Figure is showing the state and measurements at each time represented by a CRF. Our algorithm, rCRF, enables the application of recursive Bayesian estimation to CRF-based scene models. rCRF computes the full belief over human activity and object affordances ($y^1,\ldots  ,y^{T+M}$) by using RGB-D Video ($x^1,\ldots  ,x^T$).\relax }}{1}{figure.caption.1}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig1}{{1}{1}{Figure is showing the state and measurements at each time represented by a CRF. Our algorithm, rCRF, enables the application of recursive Bayesian estimation to CRF-based scene models. rCRF computes the full belief over human activity and object affordances ($y^1,\ldots ,y^{T+M}$) by using RGB-D Video ($x^1,\ldots ,x^T$).\relax }{figure.caption.1}{}}
+\citation{hemaIJRR}
 \citation{thrunBook}
 \citation{meanFieldBook}
 \citation{raob}
@@ -56,15 +56,160 @@
 \citation{hemaIJRR}
 \citation{latentIcra}
 \citation{rss2014}
-\citation{torre2012,ryoo2011}
-\citation{ziebart2009,kuderer2012,kitani2012}
-\citation{dragan2012}
 \@writefile{toc}{\contentsline {section}{\numberline {II}Background and Related Work}{2}{section.2}}
 \newlabel{relwork}{{II}{2}{Background and Related Work}{section.2}{}}
 \newlabel{parf}{{II}{2}{Background and Related Work}{section.2}{}}
+\citation{torre2012,ryoo2011}
+\citation{ziebart2009,kuderer2012,kitani2012}
+\citation{dragan2012}
 \citation{hemaAnt}
 \citation{gpcrf}
 \citation{gibson1979}
 \citation{divmbest}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces {\bf  Computing the full belief by using rCRF.} Each iteration of the recursive estimation algorithm includes computing forward and backward messages, $\alpha ^t(\mathbf  {y}^t)$ and $\beta ^{t-1}(\mathbf  {y}^{t-1})$, by using the current samples and computing the belief $p(\mathbf  {y}^t|\mathbf  {x}^1,\ldots  ,\mathbf  {x}^T)$ with the computed messages. Then, we re-compute the messages and re-sample the belief until the belief converges. \emph  {Here, we only have two objects as $\mathbf  {y}^t=(\mathbf  {O}^t_1,\mathbf  {O}^t_2,\mathbf  {A}^t)$ and $\mathbf  {x}^t=(\mathbf  {L}^t_1,\mathbf  {L}^t_2,\mathbf  {H}^t)$ }\relax }}{3}{figure.caption.2}}
-\newlabel{system}{{2}{3}{{\bf Computing the full belief by using rCRF.} Each iteration of the recursive estimation algorithm includes computing forward and backward messages, $\alpha ^t(\mathbf {y}^t)$ and $\beta ^{t-1}(\mathbf {y}^{t-1})$, by using the current samples and computing the belief $p(\mathbf {y}^t|\mathbf {x}^1,\ldots ,\mathbf {x}^T)$ with the computed messages. Then, we re-compute the messages and re-sample the belief until the belief converges. \emph {Here, we only have two objects as $\mathbf {y
+\@writefile{toc}{\contentsline {section}{\numberline {III}Overview}{3}{section.3}}
+\newlabel{overview}{{III}{3}{Overview}{section.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Belief Estimation with rCRF}{3}{section.4}}
+\newlabel{theory}{{IV}{3}{Belief Estimation with rCRF}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Recursive Conditional Random Field}{3}{subsection.4.1}}
+\newlabel{rcrfdef}{{\unhbox \voidb@x \hbox {IV-A}}{3}{Recursive Conditional Random Field}{subsection.4.1}{}}
+\newlabel{beldef}{{1}{3}{Recursive Conditional Random Field}{equation.4.1}{}}
+\citation{hmm}
+\citation{geman}
+\citation{hc1971}
+\citation{divmbest}
+\newlabel{beldec}{{2}{4}{Recursive Conditional Random Field}{equation.4.2}{}}
+\newlabel{mespas}{{3}{4}{Recursive Conditional Random Field}{equation.4.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}}Computing the belief using an rCRF}{4}{subsection.4.2}}
+\newlabel{fromto}{{\unhbox \voidb@x \hbox {IV-B}}{4}{Computing the belief using an rCRF}{subsection.4.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}1}From $p(\mathbf  {y}^t|\mathbf  {x}^t)$ to $p(\mathbf  {x}^t|\mathbf  {y}^t)$}{4}{subsubsection.4.2.1}}
+\newlabel{crflogl}{{4}{4}{From $p(\mathbf {y}^t|\mathbf {x}^t)$ to $p(\mathbf {x}^t|\mathbf {y}^t)$}{equation.4.4}{}}
+\newlabel{obsprob}{{7}{4}{From $p(\mathbf {y}^t|\mathbf {x}^t)$ to $p(\mathbf {x}^t|\mathbf {y}^t)$}{equation.4.7}{}}
+\newlabel{beliscrf}{{\unhbox \voidb@x \hbox {IV-B}2}{4}{Belief is a CRF}{subsubsection.4.2.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}2}Belief is a CRF}{4}{subsubsection.4.2.2}}
+\newlabel{crfbelief}{{8}{4}{Belief is a CRF}{equation.4.8}{}}
+\newlabel{divm}{{\unhbox \voidb@x \hbox {IV-B}3}{4}{Belief via Diverse-Most-Likely Samples}{subsubsection.4.2.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}3}Belief via Diverse-Most-Likely Samples}{4}{subsubsection.4.2.3}}
+\citation{divmbest}
+\citation{divmbest}
+\citation{divmbest}
+\citation{hemaIJRR}
+\citation{hemaIJRR}
+\citation{ssvm}
+\citation{hemaIJRR}
+\citation{hemaIJRR}
+\citation{hemaIJRR}
+\citation{hemaIJRR}
+\citation{hemaIJRR}
+\newlabel{divopt}{{10}{5}{Belief via Diverse-Most-Likely Samples}{equation.4.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Human Activity Detection and Anticipation}{5}{section.5}}
+\newlabel{rgbd}{{V}{5}{Human Activity Detection and Anticipation}{section.5}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Compute belief the over $(O^t_{1\ldots  N},A^t)$ for \unhbox \voidb@x \hbox {$t \in [1,T+\tau ]$} in an RGB-D Video of length $T$\relax }}{5}{algorithm.1}}
+\newlabel{alg:recursive}{{1}{5}{Compute belief the over $(O^t_{1\ldots N},A^t)$ for \mbox {$t \in [1,T+\tau ]$} in an RGB-D Video of length $T$\relax }{algorithm.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Experimental Results}{5}{section.6}}
+\citation{hemaIJRR}
+\citation{latentIcra}
+\citation{latentIcra}
+\citation{hemaAnt}
+\citation{gpcrf}
+\citation{ddcrf}
+\citation{divmbest}
+\citation{divmbest}
+\citation{hemaIJRR}
+\citation{latentIcra}
+\citation{hemaIJRR}
+\citation{hemaAnt}
+\citation{gpcrf}
+\citation{latentIcra}
+\citation{hemaIJRR}
+\citation{divmbest}
+\citation{ddcrf}
+\citation{gpcrf}
+\citation{hemaAnt}
+\citation{divmbest}
+\citation{ddcrf}
+\citation{divmbest}
+\citation{divmbest}
+\citation{divmbest}
+\citation{divmbest}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces \textbf  {Detection Performance over CAD-120.} We compare rCRF with MAP solution and baselines for detections accuracy.\relax }}{6}{table.caption.5}}
+\newlabel{Tdet}{{I}{6}{\textbf {Detection Performance over CAD-120.} We compare rCRF with MAP solution and baselines for detections accuracy.\relax }{table.caption.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces \textbf  {Anticipation performance for the anticipating 3 seconds in the future.} We compare rCRF with state-of-the-art anticipation algorithm and baselines for anticipation accuracy.\relax }}{6}{table.caption.6}}
+\newlabel{Tant}{{II}{6}{\textbf {Anticipation performance for the anticipating 3 seconds in the future.} We compare rCRF with state-of-the-art anticipation algorithm and baselines for anticipation accuracy.\relax }{table.caption.6}{}}
+\citation{hemaAnt}
+\citation{hemaAnt}
+\citation{hemaAnt}
+\citation{hemaAnt}
+\citation{mpi_cooking}
+\citation{dalal}
+\citation{mpi_cooking}
+\citation{mpi_cooking}
+\citation{hemaAnt}
+\citation{divmbest}
+\bibdata{shortstrings,anticipation_divmrf}
+\bibcite{divmbest}{{1}{2012}{{Batra et~al.}}{{Batra, Yadollahpour, Guzman-Rivera, and Shakhnarovich}}}
+\bibcite{ihcrf}{{2}{2013}{{Bousmalis et~al.}}{{Bousmalis, Zafeiriou, Morency, and Pantic}}}
+\bibcite{mmode}{{3}{2013}{{Chen et~al.}}{{Chen, Kolmogorov, Zhu, Metaxas, and Lampert}}}
+\bibcite{dalal}{{4}{2005}{{Dalal and Triggs}}{{}}}
+\bibcite{meanFieldBook}{{5}{2013}{{Del~Moral}}{{}}}
+\bibcite{raob}{{6}{2000}{{Doucet et~al.}}{{Doucet, De~Freitas, Murphy, and Russell}}}
+\bibcite{dragan2012}{{7}{2008}{{Dragan and Srinivasa}}{{}}}
+\bibcite{foxThesis}{{8}{2009}{{Fox}}{{}}}
+\bibcite{geman}{{9}{1984}{{Geman and Geman}}{{}}}
+\bibcite{gibson1979}{{10}{1986}{{Gibson}}{{}}}
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Computation time for anticipating 3 seconds in the future excluding pre-processing (\emph  {see supplementary material for details}).\relax }}{7}{table.caption.10}}
+\newlabel{speed}{{III}{7}{Computation time for anticipating 3 seconds in the future excluding pre-processing (\emph {see supplementary material for details}).\relax }{table.caption.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Anticipation performance for the anticipating 3 seconds in the future in MPII Cooking Dataset\cite  {mpi_cooking}.\relax }}{7}{table.caption.11}}
+\newlabel{Tantmpi}{{IV}{7}{Anticipation performance for the anticipating 3 seconds in the future in MPII Cooking Dataset\cite {mpi_cooking}.\relax }{table.caption.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusions}{7}{section.7}}
+\bibcite{davis2009}{{11}{2009}{{Gupta et~al.}}{{Gupta, Kembhavi, and Davis}}}
+\bibcite{hc1971}{{12}{1971}{{Hammersley and Clifford}}{{}}}
+\bibcite{torre2012}{{13}{2012}{{Hoai and De~la Torre}}{{}}}
+\bibcite{hoai2011}{{14}{2011}{{Hoai et~al.}}{{Hoai, Lan, and {De la Torre}}}}
+\bibcite{latentIcra}{{15}{2014{}}{{Hu et~al.}}{{Hu, Englebienne, Lou, and Kr{\"o}se}}}
+\bibcite{rss2014}{{16}{2014{}}{{Hu et~al.}}{{Hu, Lou, Englebienne, and Kr{\"o}se}}}
+\bibcite{gpcrf}{{17}{2014}{{Jiang and Saxena}}{{}}}
+\bibcite{jiang2012}{{18}{2012}{{Jiang et~al.}}{{Jiang, Lim, and Saxena}}}
+\bibcite{hall}{{19}{2013}{{Jiang et~al.}}{{Jiang, Koppula, and Saxena}}}
+\bibcite{kitani2012}{{20}{2012}{{Kitani et~al.}}{{Kitani, Ziebart, Bagnell, and Hebert}}}
+\bibcite{hemaISER}{{21}{2014}{{Koppula et~al.}}{{Koppula, Jain, and Saxena}}}
+\bibcite{hemaAnt}{{22}{2013}{{Koppula and Saxena}}{{}}}
+\bibcite{hemaECCV}{{23}{2014}{{Koppula and Saxena}}{{}}}
+\bibcite{hemaIJRR}{{24}{2013}{{Koppula et~al.}}{{Koppula, Gupta, and Saxena}}}
+\bibcite{kuderer2012}{{25}{2012}{{Kuderer et~al.}}{{Kuderer, Kretzschmar, Sprunk, and Burgard}}}
+\bibcite{tian}{{26}{2014}{{Lan et~al.}}{{Lan, Chen, and Savarese}}}
+\bibcite{mbest}{{27}{1972}{{Lawler}}{{}}}
+\bibcite{crffilter}{{28}{2007}{{Limketkai et~al.}}{{Limketkai, Fox, and Liao}}}
+\bibcite{collob2}{{29}{2013}{{Mainprice and Berenson}}{{}}}
+\bibcite{pyry2012}{{30}{2012}{{Matikainen et~al.}}{{Matikainen, Sukthankar, and Hebert}}}
+\bibcite{mlparam}{{31}{2013}{{Meier et~al.}}{{Meier, Globerson, and Sha}}}
+\bibcite{embr}{{32}{2014}{{Premachandran et~al.}}{{Premachandran, Tarlow, and Batra}}}
+\bibcite{quattoni2007}{{33}{2007}{{Quattoni et~al.}}{{Quattoni, Wang, Morency, Collins, Darrell, and Csail}}}
+\bibcite{hmm}{{34}{1989}{{Rabiner}}{{}}}
+\bibcite{mpi_cooking}{{35}{2012}{{Rohrbach et~al.}}{{Rohrbach, Amin, Andriluka, and Schiele}}}
+\bibcite{ryoo2011}{{36}{2011}{{Ryoo}}{{}}}
+\bibcite{sarkka}{{37}{2013}{{S{\"a}rkk{\"a}}}{{}}}
+\bibcite{shi2011}{{38}{2011}{{Shi et~al.}}{{Shi, Cheng, Wang, and Smola}}}
+\bibcite{siminchi2005}{{39}{2006}{{Sminchisescu et~al.}}{{Sminchisescu, Kanaujia, and Metaxas}}}
+\bibcite{dcrf}{{40}{2007}{{Sutton et~al.}}{{Sutton, McCallum, and Rohanimanesh}}}
+\bibcite{thrunBook}{{41}{2005}{{Thrun et~al.}}{{Thrun, Burgard, and Fox}}}
+\bibcite{ssvm}{{42}{2004}{{Tsochantaridis et~al.}}{{Tsochantaridis, Hofmann, Joachims, and Altun}}}
+\bibcite{ddcrf}{{43}{2005}{{Wang and Ji}}{{}}}
+\bibcite{collob1}{{44}{2013}{{Wang et~al.}}{{Wang, M{\"u}lling, Deisenroth, Amor, Vogt, Sch{\"o}lkopf, and Peters}}}
+\bibcite{rerank}{{45}{2013}{{Yadollahpour et~al.}}{{Yadollahpour, Batra, and Shakhnarovich}}}
+\bibcite{feifei2010}{{46}{2010}{{Yao and Fei-Fei}}{{}}}
+\bibcite{ziebart2009}{{47}{2009}{{Ziebart et~al.}}{{Ziebart, Ratliff, Gallagher, Mertz, Peterson, Bagnell, Hebert, Dey, and Srinivasa}}}
+\bibstyle{plainnat}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces {\bf  Computing the full belief by using rCRF.} Each iteration of the recursive estimation algorithm includes computing forward and backward messages, $\alpha ^t(\mathbf  {y}^t)$ and $\beta ^{t-1}(\mathbf  {y}^{t-1})$, by using the current samples and computing the belief $p(\mathbf  {y}^t|\mathbf  {x}^1,\ldots  ,\mathbf  {x}^T)$ with the computed messages. Then, we re-compute the messages and re-sample the belief until the belief converges. \emph  {Here, we only have two objects as $\mathbf  {y}^t=(\mathbf  {O}^t_1,\mathbf  {O}^t_2,\mathbf  {A}^t)$ and $\mathbf  {x}^t=(\mathbf  {L}^t_1,\mathbf  {L}^t_2,\mathbf  {H}^t)$ }\relax }}{9}{figure.caption.2}}
+\newlabel{system}{{2}{9}{{\bf Computing the full belief by using rCRF.} Each iteration of the recursive estimation algorithm includes computing forward and backward messages, $\alpha ^t(\mathbf {y}^t)$ and $\beta ^{t-1}(\mathbf {y}^{t-1})$, by using the current samples and computing the belief $p(\mathbf {y}^t|\mathbf {x}^1,\ldots ,\mathbf {x}^T)$ with the computed messages. Then, we re-compute the messages and re-sample the belief until the belief converges. \emph {Here, we only have two objects as $\mathbf {y}^t=(\mathbf {O}^t_1,\mathbf {O}^t_2,\mathbf {A}^t)$ and $\mathbf {x}^t=(\mathbf {L}^t_1,\mathbf {L}^t_2,\mathbf {H}^t)$ }\relax }{figure.caption.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces {\bf  rCRF is defined over a temporal CRF.} The graphical model, we use within the rCRF, is a temporal CRF with additional constraints. We impose a special structure through the conditions we state in the definition. For the visualization purposes, we show there nodes per segment although rCRF can handle any number of nodes.\relax }}{9}{figure.caption.3}}
+\newlabel{rCrf}{{3}{9}{{\bf rCRF is defined over a temporal CRF.} The graphical model, we use within the rCRF, is a temporal CRF with additional constraints. We impose a special structure through the conditions we state in the definition. For the visualization purposes, we show there nodes per segment although rCRF can handle any number of nodes.\relax }{figure.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Heatmap of the first-order statistics of activity and object affordance classes. They are used as temporal dynamics by rCRF.\relax }}{9}{figure.caption.4}}
+\newlabel{heatmap}{{4}{9}{Heatmap of the first-order statistics of activity and object affordance classes. They are used as temporal dynamics by rCRF.\relax }{figure.caption.4}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Human Activity}}}{9}{figure.caption.4}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Object Affordance}}}{9}{figure.caption.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Entropy of the belief vs. time \emph  {(uniform dist. has $\approx 3.32$ bit entropy)}\relax }}{10}{figure.caption.7}}
+\newlabel{entRop}{{5}{10}{Entropy of the belief vs. time \emph {(uniform dist. has $\approx 3.32$ bit entropy)}\relax }{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Precision vs. anticipation horizon for object affordance.\relax }}{10}{figure.caption.8}}
+\newlabel{antHor}{{6}{10}{Precision vs. anticipation horizon for object affordance.\relax }{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Precision vs. anticipation horizon for subject activities.\relax }}{10}{figure.caption.9}}
+\newlabel{objHor}{{7}{10}{Precision vs. anticipation horizon for subject activities.\relax }{figure.caption.9}{}}

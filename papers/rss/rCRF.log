@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  24 APR 2016 20:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  3 MAY 2016 14:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -392,4 +392,1088 @@ Package: amsbsy 1999/11/29 v1.2d
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count123
-LaTeX Info: R
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count124
+\leftroot@=\count125
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count126
+\DOTSCASE@=\count127
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box55
+\strutbox@=\box56
+\big@size=\dimen143
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count128
+\c@MaxMatrixCols=\count129
+\dotsspace@=\muskip11
+\c@parentequation=\count130
+\dspbrk@lvl=\count131
+\tag@help=\toks20
+\row@=\count132
+\column@=\count133
+\maxfields@=\count134
+\andhelp@=\toks21
+\eqnshift@=\dimen144
+\alignsep@=\dimen145
+\tagshift@=\dimen146
+\tagwidth@=\dimen147
+\totwidth@=\dimen148
+\lineht@=\dimen149
+\@envbody=\toks22
+\multlinegap=\skip58
+\multlinetaggap=\skip59
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 142.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen150
+\WF@size=\dimen151
+\c@WF@wrappedlines=\count135
+\WF@box=\box57
+\WF@everypar=\toks24
+Package: wrapfig 2003/01/31  v 3.6
+)
+\c@mydef=\count136
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen152
+)
+(./space_saver.tex
+\savedwidth=\skip60
+\sectionReduceTop=\skip61
+\sectionReduceBot=\skip62
+\subsectionReduceTop=\skip63
+\subsectionReduceBot=\skip64
+\abstractReduceTop=\skip65
+\abstractReduceBot=\skip66
+\captionReduceTop=\skip67
+\captionReduceBot=\skip68
+\subsubsectionReduceTop=\skip69
+\subsubsectionReduceBot=\skip70
+\horSkip=\skip71
+\verSkip=\skip72
+\figureHeight=\skip73
+) (./rCRF.aux)
+Runaway argument?
+{{2}{3}{{\bf Computing the full belief by using rCRF.} Each iteration\ETC.
+./rCRF.tex:44: File ended while scanning use of \@newl@bel.
+<inserted text> 
+                \par 
+l.44 \begin{document}
+                     
+? 
+\openout1 = `rCRF.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+\AtBeginShipoutBox=\box58
+Package hyperref Info: Link coloring OFF on input line 44.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count137
+)
+LaTeX Info: Redefining \ref on input line 44.
+LaTeX Info: Redefining \pageref on input line 44.
+LaTeX Info: Redefining \nameref on input line 44.
+
+(./rCRF.out) (./rCRF.out)
+\@outlinefile=\write3
+\openout3 = `rCRF.out'.
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count138
+\scratchdimen=\dimen153
+\scratchbox=\box59
+\nofMPsegments=\count139
+\nofMParguments=\count140
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count141
+\MPscratchDim=\dimen154
+\MPnumerator=\count142
+\makeMPintoPDFobject=\count143
+\everyMPtoPDFconversion=\toks26
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: wrapfig package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+** ATTENTION: \authorblockN is deprecated (line 78). Use \IEEEauthorblockN inst
+ead.
+** ATTENTION: \authorblockA is deprecated (line 78). Use \IEEEauthorblockA inst
+ead.
+** ATTENTION: \authorblockN is deprecated (line 78). Use \IEEEauthorblockN inst
+ead.
+** ATTENTION: \authorblockA is deprecated (line 78). Use \IEEEauthorblockA inst
+ead.
+** ATTENTION: \authorblockN is deprecated (line 78). Use \IEEEauthorblockN inst
+ead.
+** ATTENTION: \authorblockA is deprecated (line 78). Use \IEEEauthorblockA inst
+ead.
+** ATTENTION: \authorblockN is deprecated (line 78). Use \IEEEauthorblockN inst
+ead.
+** ATTENTION: \authorblockA is deprecated (line 78). Use \IEEEauthorblockA inst
+ead.
+(./abstract.tex) (./intro.tex
+
+Package natbib Warning: Citation `collob1' on page 1 undefined on input line 6.
+
+
+
+Package natbib Warning: Citation `collob2' on page 1 undefined on input line 6.
+
+
+
+Package natbib Warning: Citation `hemaISER' on page 1 undefined on input line 6
+.
+
+
+Package natbib Warning: Citation `hemaAnt' on page 1 undefined on input line 11
+.
+
+
+Package natbib Warning: Citation `gpcrf' on page 1 undefined on input line 11.
+
+
+Package natbib Warning: Citation `hemaECCV' on page 1 undefined on input line 1
+1.
+
+
+Package natbib Warning: Citation `tian' on page 1 undefined on input line 11.
+
+<./images/Fig1.pdf, id=4, 542.025pt x 275.0275pt>
+File: ./images/Fig1.pdf Graphic file (type pdf)
+ <use ./images/Fig1.pdf>
+Package pdftex.def Info: ./images/Fig1.pdf used on input line 32.
+(pdftex.def)             Requested size: 516.0pt x 261.83278pt.
+
+Overfull \hbox (264.0pt too wide) in paragraph at lines 32--34
+[][] 
+ []
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 34.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 34.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+ <./images/Fig1.pdf>]
+
+Package natbib Warning: Citation `hemaIJRR' on page 2 undefined on input line 5
+0.
+
+) (./relatedwork.tex
+
+Package natbib Warning: Citation `thrunBook' on page 2 undefined on input line 
+9.
+
+
+Package natbib Warning: Citation `meanFieldBook' on page 2 undefined on input l
+ine 9.
+
+
+Package natbib Warning: Citation `raob' on page 2 undefined on input line 11.
+
+
+Package natbib Warning: Citation `raob' on page 2 undefined on input line 11.
+
+
+Package natbib Warning: Citation `sarkka' on page 2 undefined on input line 11.
+
+
+
+Package natbib Warning: Citation `hemaAnt' on page 2 undefined on input line 13
+.
+
+
+Package natbib Warning: Citation `hemaAnt' on page 2 undefined on input line 13
+.
+
+
+Package natbib Warning: Citation `siminchi2005' on page 2 undefined on input li
+ne 18.
+
+
+Package natbib Warning: Citation `quattoni2007' on page 2 undefined on input li
+ne 18.
+
+
+Package natbib Warning: Citation `divmbest' on page 2 undefined on input line 2
+0.
+
+
+Package natbib Warning: Citation `mbest' on page 2 undefined on input line 20.
+
+
+Package natbib Warning: Citation `mmode' on page 2 undefined on input line 20.
+
+
+Package natbib Warning: Citation `mlparam' on page 2 undefined on input line 20
+.
+
+
+Package natbib Warning: Citation `embr' on page 2 undefined on input line 20.
+
+
+Package natbib Warning: Citation `rerank' on page 2 undefined on input line 20.
+
+
+
+Package natbib Warning: Citation `divmbest' on page 2 undefined on input line 2
+2.
+
+
+Package natbib Warning: Citation `divmbest' on page 2 undefined on input line 2
+2.
+
+
+Package natbib Warning: Citation `divmbest' on page 2 undefined on input line 2
+2.
+
+
+Package natbib Warning: Citation `dcrf' on page 2 undefined on input line 24.
+
+
+Package natbib Warning: Citation `ihcrf' on page 2 undefined on input line 24.
+
+
+Package natbib Warning: Citation `gpcrf' on page 2 undefined on input line 24.
+
+
+Package natbib Warning: Citation `ddcrf' on page 2 undefined on input line 26.
+
+
+Package natbib Warning: Citation `ddcrf' on page 2 undefined on input line 26.
+
+
+Package natbib Warning: Citation `hemaIJRR' on page 2 undefined on input line 2
+6.
+
+
+Package natbib Warning: Citation `foxThesis' on page 2 undefined on input line 
+26.
+
+
+Package natbib Warning: Citation `ihcrf' on page 2 undefined on input line 28.
+
+
+Package natbib Warning: Citation `gpcrf' on page 2 undefined on input line 28.
+
+
+Package natbib Warning: Citation `crffilter' on page 2 undefined on input line 
+28.
+
+
+Package natbib Warning: Citation `hoai2011' on page 2 undefined on input line 3
+2.
+
+
+Package natbib Warning: Citation `shi2011' on page 2 undefined on input line 32
+.
+
+
+Package natbib Warning: Citation `pyry2012' on page 2 undefined on input line 3
+2.
+
+
+Package natbib Warning: Citation `davis2009' on page 2 undefined on input line 
+32.
+
+
+Package natbib Warning: Citation `feifei2010' on page 2 undefined on input line
+ 32.
+
+
+Package natbib Warning: Citation `jiang2012' on page 2 undefined on input line 
+32.
+
+
+Package natbib Warning: Citation `hall' on page 2 undefined on input line 32.
+
+
+Package natbib Warning: Citation `gibson1979' on page 2 undefined on input line
+ 32.
+
+
+Package natbib Warning: Citation `hemaIJRR' on page 2 undefined on input line 3
+2.
+
+
+Package natbib Warning: Citation `latentIcra' on page 2 undefined on input line
+ 32.
+
+
+Package natbib Warning: Citation `rss2014' on page 2 undefined on input line 32
+.
+
+[2]
+
+Package natbib Warning: Citation `torre2012' on page 3 undefined on input line 
+34.
+
+
+Package natbib Warning: Citation `ryoo2011' on page 3 undefined on input line 3
+4.
+
+
+Package natbib Warning: Citation `ziebart2009' on page 3 undefined on input lin
+e 34.
+
+
+Package natbib Warning: Citation `kuderer2012' on page 3 undefined on input lin
+e 34.
+
+
+Package natbib Warning: Citation `kitani2012' on page 3 undefined on input line
+ 34.
+
+
+Package natbib Warning: Citation `dragan2012' on page 3 undefined on input line
+ 34.
+
+
+Package natbib Warning: Citation `hemaAnt' on page 3 undefined on input line 36
+.
+
+
+Package natbib Warning: Citation `gpcrf' on page 3 undefined on input line 36.
+
+) (./overview.tex <./images/systemflow.pdf, id=66, 442.65375pt x 521.95pt>
+File: ./images/systemflow.pdf Graphic file (type pdf)
+
+<use ./images/systemflow.pdf>
+Package pdftex.def Info: ./images/systemflow.pdf used on input line 4.
+(pdftex.def)             Requested size: 516.0pt x 608.47292pt.
+
+Overfull \hbox (264.0pt too wide) in paragraph at lines 4--5
+[][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 12.64621pt on input line 7.
+
+
+LaTeX Warning: Reference `system' on page 3 undefined on input line 9.
+
+
+LaTeX Warning: Reference `system' on page 3 undefined on input line 12.
+
+
+Package natbib Warning: Citation `gibson1979' on page 3 undefined on input line
+ 12.
+
+
+LaTeX Warning: Reference `rgbd' on page 3 undefined on input line 13.
+
+
+LaTeX Warning: Reference `theory' on page 3 undefined on input line 15.
+
+
+LaTeX Warning: Reference `system' on page 3 undefined on input line 15.
+
+) (./theory.tex
+
+LaTeX Warning: Reference `rcrfdef' on page 3 undefined on input line 4.
+
+
+LaTeX Warning: Reference `fromto' on page 3 undefined on input line 4.
+
+
+LaTeX Warning: Reference `beliscrf' on page 3 undefined on input line 4.
+
+
+Package natbib Warning: Citation `divmbest' on page 3 undefined on input line 4
+.
+
+<./images/hmmcrf.pdf, id=67, 409.71968pt x 159.33543pt>
+File: ./images/hmmcrf.pdf Graphic file (type pdf)
+
+<use ./images/hmmcrf.pdf>
+Package pdftex.def Info: ./images/hmmcrf.pdf used on input line 28.
+(pdftex.def)             Requested size: 516.0pt x 200.68102pt.
+
+Overfull \hbox (264.0pt too wide) in paragraph at lines 28--30
+[][] 
+ []
+
+
+LaTeX Warning: Reference `rCrf' on page 3 undefined on input line 35.
+
+[3]
+
+Package natbib Warning: Citation `hmm' on page 4 undefined on input line 47.
+
+
+LaTeX Warning: Reference `mespas' on page 4 undefined on input line 61.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 65.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 65.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 65.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 65.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 65.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 65.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 65.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 65.
+
+
+Package natbib Warning: Citation `geman' on page 4 undefined on input line 65.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 80.
+
+
+Overfull \hbox (5.09203pt too wide) detected at line 82
+\OML/cmm/m/it/9 p\OT1/cmr/m/n/9 (\OT1/cmr/bx/n/9 y[]\OT1/cmr/m/n/9 ) \OMS/cmsy/
+m/n/9 ^^Y []\OT1/cmr/m/n/9 ([] [] + [] [])
+ []
+
+LaTeX Font Info:    Calculating math sizes for size <> on input line 82.
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <> not available
+(Font)              size <5> substituted on input line 82.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.7> not available
+(Font)              size <5> substituted on input line 82.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.5> not available
+(Font)              size <5> substituted on input line 82.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <> not available
+(Font)              size <5> substituted on input line 82.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.7> not available
+(Font)              size <5> substituted on input line 82.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.5> not available
+(Font)              size <5> substituted on input line 82.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <> not available
+(Font)              size <5> substituted on input line 82.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.7> not available
+(Font)              size <5> substituted on input line 82.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.5> not available
+(Font)              size <5> substituted on input line 82.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <> not available
+(Font)              size <5> substituted on input line 82.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <0.7> not available
+(Font)              size <5> substituted on input line 82.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <0.5> not available
+(Font)              size <5> substituted on input line 82.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 95.
+
+
+LaTeX Warning: Reference `beldec' on page 4 undefined on input line 102.
+
+
+LaTeX Warning: Reference `beldec' on page 4 undefined on input line 104.
+
+
+LaTeX Warning: Reference `rCrf' on page 4 undefined on input line 107.
+
+
+LaTeX Warning: Reference `mespas' on page 4 undefined on input line 114.
+
+
+LaTeX Warning: Reference `obsprob' on page 4 undefined on input line 114.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 126.
+
+
+LaTeX Warning: Reference `crfbelief' on page 4 undefined on input line 136.
+
+
+Package natbib Warning: Citation `hc1971' on page 4 undefined on input line 136
+.
+
+
+Package natbib Warning: Citation `divmbest' on page 4 undefined on input line 1
+47.
+
+[4]
+
+Package natbib Warning: Citation `divmbest' on page 5 undefined on input line 1
+62.
+
+
+Package natbib Warning: Citation `divmbest' on page 5 undefined on input line 1
+62.
+
+
+LaTeX Warning: Reference `crfbelief' on page 5 undefined on input line 164.
+
+
+LaTeX Warning: Reference `crfbelief' on page 5 undefined on input line 164.
+
+
+Package natbib Warning: Citation `divmbest' on page 5 undefined on input line 1
+64.
+
+
+LaTeX Warning: Reference `obsprob' on page 5 undefined on input line 164.
+
+
+LaTeX Warning: Reference `mespas' on page 5 undefined on input line 164.
+
+
+LaTeX Warning: Reference `obsprob' on page 5 undefined on input line 164.
+
+) (./activity_detection.tex
+
+LaTeX Warning: Reference `overview' on page 5 undefined on input line 4.
+
+
+Package natbib Warning: Citation `hemaIJRR' on page 5 undefined on input line 4
+.
+
+
+Package natbib Warning: Citation `hemaIJRR' on page 5 undefined on input line 6
+.
+
+
+LaTeX Warning: Reference `crflogl' on page 5 undefined on input line 6.
+
+
+Package natbib Warning: Citation `ssvm' on page 5 undefined on input line 6.
+
+
+Package natbib Warning: Citation `hemaIJRR' on page 5 undefined on input line 6
+.
+
+
+LaTeX Warning: Reference `alg:recursive' on page 5 undefined on input line 8.
+
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 12.
+
+Underfull \hbox (badness 1509) in paragraph at lines 12--12
+[]\OT1/ptm/b/n/10 Algorithm 1 \OT1/ptm/m/n/10 Com-pute be-lief the over $\OT1/c
+mr/m/n/10 (\OML/cmm/m/it/10 O[]; A[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 for
+ []
+
+
+Package natbib Warning: Citation `hemaIJRR' on page 5 undefined on input line 1
+6.
+
+
+LaTeX Warning: Reference `obsprob' on page 5 undefined on input line 17.
+
+
+LaTeX Warning: Reference `crfbelief' on page 5 undefined on input line 18.
+
+
+LaTeX Warning: Reference `mespas' on page 5 undefined on input line 25.
+
+
+LaTeX Warning: Reference `crfbelief' on page 5 undefined on input line 26.
+
+
+LaTeX Warning: Reference `divopt' on page 5 undefined on input line 26.
+
+
+LaTeX Warning: Reference `mespas' on page 5 undefined on input line 32.
+
+
+LaTeX Warning: Reference `divopt' on page 5 undefined on input line 41.
+
+) (./experiments.tex
+
+! LaTeX Error: File `longfigure.tex' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+
+Package natbib Warning: Citation `hemaIJRR' on page 5 undefined on input line 7
+.
+
+
+Package natbib Warning: Citation `hemaIJRR' on page 5 undefined on input line 9
+.
+
+
+Package natbib Warning: Citation `hemaIJRR' on page 5 undefined on input line 9
+.
+
+
+LaTeX Warning: Reference `alg:recursive' on page 5 undefined on input line 9.
+
+[5]
+
+Package natbib Warning: Citation `hemaIJRR' on page 6 undefined on input line 1
+3.
+
+
+Package natbib Warning: Citation `latentIcra' on page 6 undefined on input line
+ 13.
+
+
+Package natbib Warning: Citation `latentIcra' on page 6 undefined on input line
+ 13.
+
+
+Package natbib Warning: Citation `hemaAnt' on page 6 undefined on input line 13
+.
+
+
+Package natbib Warning: Citation `gpcrf' on page 6 undefined on input line 13.
+
+
+Package natbib Warning: Citation `ddcrf' on page 6 undefined on input line 13.
+
+
+Package natbib Warning: Citation `divmbest' on page 6 undefined on input line 1
+5.
+
+
+Package natbib Warning: Citation `divmbest' on page 6 undefined on input line 1
+5.
+
+
+LaTeX Warning: Reference `Tdet' on page 6 undefined on input line 20.
+
+
+LaTeX Warning: Reference `Tdet' on page 6 undefined on input line 20.
+
+
+Package natbib Warning: Citation `hemaIJRR' on page 6 undefined on input line 2
+0.
+
+
+Package natbib Warning: Citation `latentIcra' on page 6 undefined on input line
+ 20.
+
+
+Package natbib Warning: Citation `hemaIJRR' on page 6 undefined on input line 2
+0.
+
+
+LaTeX Warning: Reference `heatmap' on page 6 undefined on input line 20.
+
+<./images/tranAct.pdf, id=133, 388.45125pt x 374.39874pt>
+File: ./images/tranAct.pdf Graphic file (type pdf)
+
+<use ./images/tranAct.pdf>
+Package pdftex.def Info: ./images/tranAct.pdf used on input line 23.
+(pdftex.def)             Requested size: 247.6778pt x 238.72318pt.
+
+<./images/tranObj.pdf, id=134, 452.69125pt x 459.7175pt>
+File: ./images/tranObj.pdf Graphic file (type pdf)
+
+<use ./images/tranObj.pdf>
+Package pdftex.def Info: ./images/tranObj.pdf used on input line 24.
+(pdftex.def)             Requested size: 247.6778pt x 251.51962pt.
+
+Overfull \hbox (251.45557pt too wide) in paragraph at lines 23--25
+[][]  [][] 
+ []
+
+
+LaTeX Warning: Reference `abcd' on page 6 undefined on input line 30.
+
+
+LaTeX Warning: Reference `abcd' on page 6 undefined on input line 32.
+
+
+LaTeX Warning: Reference `Tant' on page 6 undefined on input line 34.
+
+
+LaTeX Warning: Reference `Tant' on page 6 undefined on input line 34.
+
+
+Package natbib Warning: Citation `hemaAnt' on page 6 undefined on input line 34
+.
+
+
+Package natbib Warning: Citation `gpcrf' on page 6 undefined on input line 34.
+
+
+Package natbib Warning: Citation `latentIcra' on page 6 undefined on input line
+ 50.
+
+
+Package natbib Warning: Citation `hemaIJRR' on page 6 undefined on input line 5
+1.
+
+
+Package natbib Warning: Citation `divmbest' on page 6 undefined on input line 5
+2.
+
+
+Package natbib Warning: Citation `ddcrf' on page 6 undefined on input line 53.
+
+
+Overfull \hbox (23.8005pt too wide) in paragraph at lines 43--60
+ [][] 
+ []
+
+
+Package natbib Warning: Citation `gpcrf' on page 6 undefined on input line 73.
+
+
+Package natbib Warning: Citation `hemaAnt' on page 6 undefined on input line 74
+.
+
+
+Package natbib Warning: Citation `divmbest' on page 6 undefined on input line 7
+5.
+
+
+Package natbib Warning: Citation `ddcrf' on page 6 undefined on input line 76.
+
+
+Overfull \hbox (27.42783pt too wide) in paragraph at lines 68--83
+ [][] 
+ []
+
+
+Package natbib Warning: Citation `divmbest' on page 6 undefined on input line 8
+6.
+
+
+LaTeX Warning: Reference `Tdet' on page 6 undefined on input line 86.
+
+
+LaTeX Warning: Reference `Tant' on page 6 undefined on input line 86.
+
+
+Package natbib Warning: Citation `divmbest' on page 6 undefined on input line 8
+6.
+
+
+Package natbib Warning: Citation `divmbest' on page 6 undefined on input line 8
+6.
+
+
+Package natbib Warning: Citation `divmbest' on page 6 undefined on input line 8
+6.
+
+
+LaTeX Warning: Reference `antHor' on page 6 undefined on input line 90.
+
+
+LaTeX Warning: Reference `objHor' on page 6 undefined on input line 90.
+
+
+LaTeX Warning: Reference `antHor' on page 6 undefined on input line 94.
+
+
+LaTeX Warning: Reference `objHor' on page 6 undefined on input line 94.
+
+[6] <./images/entTwo.pdf, id=143, 450.68375pt x 317.185pt>
+File: ./images/entTwo.pdf Graphic file (type pdf)
+
+<use ./images/entTwo.pdf>
+Package pdftex.def Info: ./images/entTwo.pdf used on input line 98.
+(pdftex.def)             Requested size: 516.0pt x 363.19662pt.
+
+Overfull \hbox (264.0pt too wide) in paragraph at lines 98--99
+ [] 
+ []
+
+
+LaTeX Warning: Reference `entRop' on page 7 undefined on input line 104.
+
+
+LaTeX Warning: Reference `antHor' on page 7 undefined on input line 107.
+
+
+LaTeX Warning: Reference `objHor' on page 7 undefined on input line 107.
+
+
+Package natbib Warning: Citation `hemaAnt' on page 7 undefined on input line 10
+7.
+
+<./images/AntO.pdf, id=144, 614.295pt x 268.00125pt>
+File: ./images/AntO.pdf Graphic file (type pdf)
+ <use ./images/AntO.pdf>
+Package pdftex.def Info: ./images/AntO.pdf used on input line 111.
+(pdftex.def)             Requested size: 516.0pt x 225.13176pt.
+
+Overfull \hbox (264.0pt too wide) in paragraph at lines 111--112
+ [][] 
+ []
+
+<./images/AntA.pdf, id=145, 614.295pt x 295.1025pt>
+File: ./images/AntA.pdf Graphic file (type pdf)
+ <use ./images/AntA.pdf>
+Package pdftex.def Info: ./images/AntA.pdf used on input line 118.
+(pdftex.def)             Requested size: 516.0pt x 247.8979pt.
+
+Overfull \hbox (264.0pt too wide) in paragraph at lines 118--119
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package natbib Warning: Citation `hemaAnt' on page 7 undefined on input line 12
+4.
+
+
+Package natbib Warning: Citation `hemaAnt' on page 7 undefined on input line 12
+4.
+
+
+LaTeX Warning: Reference `speed' on page 7 undefined on input line 124.
+
+
+Package natbib Warning: Citation `hemaAnt' on page 7 undefined on input line 13
+2.
+
+
+Package natbib Warning: Citation `mpi_cooking' on page 7 undefined on input lin
+e 140.
+
+
+Package natbib Warning: Citation `dalal' on page 7 undefined on input line 140.
+
+
+
+Package natbib Warning: Citation `mpi_cooking' on page 7 undefined on input lin
+e 145.
+
+
+Package natbib Warning: Citation `mpi_cooking' on page 7 undefined on input lin
+e 145.
+
+
+Package natbib Warning: Citation `hemaAnt' on page 7 undefined on input line 15
+0.
+
+
+Package natbib Warning: Citation `divmbest' on page 7 undefined on input line 1
+51.
+
+
+LaTeX Warning: Reference `Tantmpi' on page 7 undefined on input line 158.
+
+) (./conclusion.tex) (./rCRF.bbl
+Underfull \hbox (badness 4193) in paragraph at lines 10--13
+[]\OT1/ptm/m/n/9 D. Ba-tra, P. Yadol-lah-pour, A. Guzman-Rivera, and G.
+ []
+
+[7])
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+
+Package natbib Warning: There were undefined citations.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 109.
+[8] [9 <./images/systemflow.pdf> <./images/hmmcrf.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./images/hmmcrf.pdf): PDF in
+clusion: multiple pdfs with page group included in a single page
+> <./images/tranAct.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./images/tranAct.pdf): PDF i
+nclusion: multiple pdfs with page group included in a single page
+> <./images/tranObj.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./images/tranObj.pdf): PDF i
+nclusion: multiple pdfs with page group included in a single page
+>] [10 <./images/entTwo.pdf> <./images/AntO.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./images/AntO.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+> <./images/AntA.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./images/AntA.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 109.
+ (./rCRF.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 109.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 109.
+
+
+Package rerunfilecheck Warning: File `rCRF.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `rCRF.out':
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  9CCCC23C9813025CB92D7F343E7DC27F;819.
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 4.5pt have occurred.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 109.
+ ) 
+Here is how much of TeX's memory you used:
+ 9049 strings out of 493089
+ 136333 string characters out of 6134842
+ 238966 words of memory out of 5000000
+ 12257 multiletter control sequences out of 15000+600000
+ 51329 words of font info for 111 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 36i,12n,39p,1593b,634s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
+st, replaced by a fixed one
+
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2015/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfont
+s/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/
+utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmbi8a.pf
+b></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on rCRF.pdf (10 pages, 4947879 bytes).
+PDF statistics:
+ 872 PDF objects out of 1000 (max. 8388607)
+ 371 compressed objects within 4 object streams
+ 117 named destinations out of 1000 (max. 500000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,6 +1,6 @@
-% !TEX root = robobrain.tex
+% !TEX root = ../../ozan_sener_thesis.tex
 % \vskip .1in
-\section{Introduction}
+\section{Why do we need robot knowledge bases?}
 Over the last decade, we have seen many successful applications of large-scale knowledge systems.
 %  many inclusive web services have been developed  by successfully combining information at a large-scale.
 Examples include  Google knowledge graph \cite{dong2014knowledge}, IBM Watson~\cite{ferrucci2010}, Wikipedia,
@@ -22,7 +22,7 @@ speech~\citep{mohamed2011deep}.  These sources of knowledge are specifically des
  appropriate plans for grasping and manipulating objects. Efficiently handling this joint knowledge representation across different
  tasks and modalities is still an open problem.
 
-In this paper we present \robobrain{} that allows robots to learn and share such representations of knowledge.
+In this chapter we present \robobrain{} that allows robots to learn and share such representations of knowledge.
 We learn these knowledge representations from a variety of sources, including interactions that robots have while performing perception,
 planning and control, as well as natural language and visual data from the Internet.
 Our representation considers several modalities including symbols, natural language, visual or shape features, haptic properties, and so on. \robobrain{} connects this knowledge from various sources and allow robots to perform diverse tasks by jointly reasoning over multiple data modalities.  %Moreover, our experiments suggest that by connecting different modalities and projects, robots can share knowledge and collectively improve their abilities.
@@ -40,18 +40,15 @@ Our representation considers several modalities including symbols, natural langu
  so on.
  }
  \label{fig:intro}
-  \vskip -.2in
  \end{figure}
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=.95\linewidth, height=2.6in, clip=true, trim=0 40 0 0]{Image/RBgraph}
-\vskip -.05in
 \caption{\textbf{A visualization of the \robobrain{} graph} on Nov 2014, showing about 45K nodes and 100K directed edges.
 %  from the RoboBrain's knowledge graph.
 The left inset shows a zoomed-in view of a small region of the graph with rendered media. This illustrates the relations between multiple modalities namely images, heatmaps, words and human poses. \textit{For high-definition graph visualization, see: \url{https://sites.google.com/site/robotknowledgeengine/}}}
 \label{fig:graph}
-\vskip -.2in
 \end{figure*}
 
 
@@ -67,11 +64,6 @@ The key challenge lies in building this graph from a variety of knowledge source
 We  present use of \robobrain{} on three robotics applications in the area of grounding natural language, perception and planning.
 For each application we show usage of \robobrain{} \textit{as-a-service}, which allow researchers to effortlessly use the state-of-the-art algorithms. We also present experiments to show that sharing knowledge representations through \robobrain{} improves existing language grounding and path planning algorithms.
 
-\iffalse
-We present \robobrain{}-as-a-service scenario which lets robotics researchers to easily integrate available state of the art algorithms and collected structured multi-modal data,
-sharing semantic knowledge from unstructured internet sources scenario, and fusion of multiple algorithms scenario. Our experimental evaluation suggests that \robobrain{} allows effortless development of complicated robotics applications.
-They also suggest that \robobrain{} can replace tedious manual labelling process with simple queries over unstructured internet sources. It can also automatically choose an algorithm based on the inferred beliefs.
-\fi
 
 \robobrain{} is a collaborative project that we support by designing a large-scale cloud architecture.
 %and we designed a large-scaled cloud architecture to enable this collaboration efficiently.
@@ -83,14 +75,7 @@ also be beneficial for the robotics community at large.
 %The RKE is under open Creative Commons Attribution license\footnote{http://creativecommons.org/licenses/by/2.5, Extra conditions may apply depending on the data sources, see anonymous.me for detailed information.} and is
 %avalable at: \texttt{\url{http://anonymous}}
 
-This is our first paper introducing \robobrain{}. It summarizes the key ideas and challenges in building a knowledge engine for robots. The goal of the paper is to present an overall view of the \robobrain{}, its architecture, functionalities, and demonstrate its application to robotics.
-\iffalse
-The goal of this paper is to summarize the key ideas in building \robobrain{}, present
-the architecture details, and demonstrate its applications to robotics.  \todo{It is
-our first paper introducing \robobrain{}, and is written as a systems paper.}
-\fi
- In
-Section~\ref{sec:graph} we formally define the \robobrain{} graph and describe its
+The goal of the chapter is to present an overall view of the \robobrain{}, its architecture, functionalities, and demonstrate its application to robotics. In Section~\ref{sec:graph} we formally define the \robobrain{} graph and describe its
 system architecture in Section~\ref{sec:system}. In order for robots to use
 \robobrain{} we propose the Robot Query Library in Section~\ref{sec:raquel}. In
 Section~\ref{sec:applications} we present different robotic applications using \robobrain{}.
