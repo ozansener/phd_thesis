@@ -1,10 +1,9 @@
-% !TEX root = anticipation_divmrf.tex
+% !TEX root = ../../ozan_sener_thesis.tex
 \section{Belief Estimation with  rCRF}
 \label{theory}
 In this section, we develop the Recursive Conditional Random Field (rCRF) to use CRF in a Bayesian filtering setting. rCRF jointly uses rich model of CRF and the recursive nature of the Bayesian filtering to compute an accurate belief. We first define our modelling assumptions in Section~\ref{rcrfdef}, and then we introduce a link between the CRF likelihood and the measurement likelihood in Section~\ref{fromto} in order to compute the posterior belief. In Section~\ref{beliscrf}, we further show that the resulting posterior belief is equivalent to a CRF. Moreover, this equivalence enables efficient computation via the diversity based method \cite{divmbest} developed for CRFs.
 \subsection{Recursive Conditional Random Field}
 \label{rcrfdef}
-%\vspace{\subsectionReduceTop}
 Consider a sequential estimation problem in which we are interested in variables $\mathbf{y}^t$ using observations $\mathbf{x}^t$ where $t$ is the temporal variable. In our application, $t$ is the temporal segment id. We note RGB-D camera reading as $\mathbf{x}^t$, and object and activity labels as $\mathbf{y}^t$. We now define the Recursive Conditional Random Field (rCRF) framework for such a problem following the assumptions of Hidden Markov Models.
 
 \begin{mydef}
@@ -20,15 +19,11 @@ Let $\mathcal{G}^t=(V^t,E^t)$ be set of graphs indexed by the temporal variable 
 %\item $\mathbf{x^t} \perp \mathbf{y^u} | \mathbf{y^t} \quad  \forall {u \neq t}$ \hfill (Measurements are Cond.Ind.)
 \item $p(\mathbf{y}^t=\mathbf{y}|\mathbf{y}^{t-1}=\mathbf{y^\prime})=p_v(\mathbf{y}|\mathbf{y^\prime})$ \hfill (stationarity)
 \end{enumerate}
-%\vspace{-2mm}
 $\hfill \blacksquare$
 \end{mydef}
 \begin{figure}[ht]
-%\vspace{-5mm}
 \includegraphics[width=\textwidth]{hmmcrf}
-%\vspace{\captionReduceTop}
 \caption{{\bf rCRF is defined over a temporal CRF.} The graphical model, we use within the rCRF, is a temporal CRF with additional constraints. We impose a special structure through the conditions we state in the definition. For the visualization purposes, we show there nodes per segment although rCRF can handle any number of nodes.}% Shaded nodes represent the observations.
-%\vspace{\captionReduceBot}
 \label{rCrf}
 \end{figure}
 
@@ -56,7 +51,6 @@ Moreover, $\alpha^t$ and $\beta^t$ can be computed recursively by using forward 
 with initializations $\alpha^1(\mathbf{y}^1)=p(\mathbf{x}^1|\mathbf{y}^1)$ and $\beta^T(\mathbf{y}^T)=1$.
 
 \subsection{Computing the belief using an rCRF}
-%\vspace{\subsectionReduceTop}
 \label{fromto}
 Recursive definition in (\ref{mespas}) has two significant drawbacks:
  firstly, CRF is modelling $p(\mathbf{y}^t|\mathbf{x}^t)$ instead of $p(\mathbf{x}^t|\mathbf{y}^t)$ and the transformation is not trivial. Secondly, computation of the messages require a summation over the entire output space, and it has an exponential dimension. In this section, we first compute the posterior of the observation given labels $p(\mathbf{x}^t|\mathbf{y}^t)$ by using the CRF posterior likelihood $p(\mathbf{y}^t|\mathbf{x}^t)$. Then, we show that the belief function at time $t$, $bel^t(\mathbf{y})$, can be approximately represented as a Gibbs measure over $\mathcal{G}^t$. Then, we conclude that the belief, $bel^t(\mathbf{y})$, is a CRF over the graph $\mathcal{G}^t$ with modified energy functions.
@@ -135,9 +129,7 @@ where $\gamma=\sum_{\mathbf{y}^{t+1}} \beta^{t+1}(\mathbf{y}^{t+1}) p(\mathbf{x}
 
 One property to observe is the decomposition of the belief over the graph. Resulting belief function, (\ref{crfbelief}), is a summation over energy terms defined over nodes $i \in V^t$ and edges $i,j\in E^t$. Hence, belief $bel^t(\cdot)$ is a Gibbs measure over $\mathcal{G}^t$. By using Hammersley-Clifford theorem \cite{hc1971}, we  conclude that the posterior belief in rCRF is also a CRF. In other words, belief is a CRF defined over the same graph with a modified energy.
 
-%\vspace{\sectionReduceBot}
 \subsubsection{Belief via Diverse-Most-Likely Samples}
-%\vspace{\sectionReduceTop}
 \label{divm}
 Since we computed the belief function and showed that it is equivalent to a CRF, we now need
 an efficient method for computing it.
@@ -162,4 +154,3 @@ Since there are only a few plausible explanation of a visual observation and CRF
 This optimization is NP-hard in general; however, since we already showed $bel^t(\bf{y})$ is CRF, we use the existing diverse-m-best algorithms developed for CRFs. We use the Lagrange relaxation by Batra et al. \cite{divmbest}. We explain the details of solving this problem by using \cite{divmbest} in supplementary material.
 
 In summary, we first compute the belief via (\ref{crfbelief}) for all frames by using samples of the previous and the next frame as well as CRF likelihoods. Then, we compute the diverse samples of (\ref{crfbelief}) by using \cite{divmbest}. After computing the samples, we compute the messages $\alpha^t$ and $\beta^t$ by using the equations (\ref{obsprob}) and (\ref{mespas}). We continue to re-sample the beliefs and re-compute the messages recursively until the convergence. Moreover, during the initialization, we only sample the observation function (\ref{obsprob}) since the messages are not available.
-%\vspace{\subsectionReduceBot}

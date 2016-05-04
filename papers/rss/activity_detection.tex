@@ -6,7 +6,7 @@ In this section, we describe how we apply the rCRF framework to RGB-D videos for
 
 We then obtain the observations $\mathbf{x}^t=(L_1^t,L_2^t,H^t)$, by detecting the objects in the first frame and then tracking them. We obtain the human pose $H^t$ through a skeleton tracker. We consider affordances and activities as state \mbox{$\mathbf{y}^t=(O^t_1,\ldots,O^t_N,A)$} where $N$ is the number of objects. We extracted set of features from the observations following the feature functions in \cite{hemaIJRR} (\emph{eg.} relative and absolute location of objects, human joints and their temporal displacements). After extracting the features, we define our CRF as a log-linear CRF and learn the energy function defined in (\ref{crflogl}) by using the Structural SVM \cite{ssvm} as in the case of \cite{hemaIJRR}. We use the first order statistics for temporal dynamics as \mbox{$p_v(y,y^\prime)=p(Y^t_v=y|Y^{t-1}_v=y^\prime)=\frac{\#(Y^t_v=y,Y^{t-1}_v=y^\prime)}{\#(Y^t_v=y\prime)}$} where $\#(\cdot,\cdot)$ is number of the co-occurrence in training data.
 
-After defining the observation, state and dynamics, we apply the rCRF framework. We also summarize the activity detection and anticipation application in Algorithm~\ref{alg:recursive}.%\vspace{-5mm}
+After defining the observation, state and dynamics, we apply the rCRF framework. We also summarize the activity detection and anticipation application in Algorithm~\ref{alg:recursive}.
 
 \setlength{\textfloatsep}{0.1pt}
 \begin{algorithm}
@@ -35,8 +35,5 @@ After defining the observation, state and dynamics, we apply the rCRF framework.
 \ENDFOR
 \end{algorithmic}
 \end{algorithm}
-
-%\vspace{-3mm}
-%During the initialization stage in Algorithm~\ref{alg:recursive}, we compute the belief without messages since the recursive computation of the messages requires a belief. After the initialization, we apply the full rCRF algorithm recursively.
 
 Moreover, since the temporal relations are modeled as causal, we do not compute the backward messages during the anticipation. In anticipation, there is also no future observation. Hence, the belief is defined solely by the forward messages. In order to compute the belief for future frames, we propagate the estimated belief. We propagate the belief to the next frame by sampling the next state of the each sample in the belief of the current frame via the temporal dynamics. Then, we choose diverse most likely samples out of the propagated samples via solving (\ref{divopt}) with exhaustive search.

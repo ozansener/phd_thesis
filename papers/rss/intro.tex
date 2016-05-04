@@ -8,7 +8,7 @@ The set of the future possibilities is quite large, and robots need to be aware 
 
 %For example, Koppula et al. \cite{hemaAnt} used anticipation in assistive robotic setting and successfully \emph{opened doors} and \emph{served drinks} by reacting to possible future human actions.
 
-Anticipation is a challenging task, and it requires us to model the relationships between several objects and the human(s) in the scene, as well as their temporal evolution. Although the modelling assumptions and model parametrization varies, the common approach \cite{hemaAnt,gpcrf,hemaECCV,tian} is using Conditional Random Field (CRF) to represent the rich relations in the scene, and anticipating a single or a few most likely future states. Since the future is ambiguous, the most likely state might not be sufficient enough to assess the risk of each action. For example, consider a collaborative cooking scenario, the object that human is reaching is typically a distribution over many objects. Computing the trajectory, that is least likely to conflict with the human, is only possible via consideration of all future possibilities. The question, we address in this paper, is: \emph{How can we estimate all plausible future activities and their probabilities in a scene modelled by a CRF?}
+Anticipation is a challenging task, and it requires us to model the relationships between several objects and the human(s) in the scene, as well as their temporal evolution. Although the modelling assumptions and model parametrization varies, the common approach \cite{hemaAnt,gpcrf,hemaECCV,tian} is using Conditional Random Field (CRF) to represent the rich relations in the scene, and anticipating a single or a few most likely future states. Since the future is ambiguous, the most likely state might not be sufficient enough to assess the risk of each action. For example, consider a collaborative cooking scenario, the object that human is reaching is typically a distribution over many objects. Computing the trajectory, that is least likely to conflict with the human, is only possible via consideration of all future possibilities. The question, we address in this chapter, is: \emph{How can we estimate all plausible future activities and their probabilities in a scene modelled by a CRF?}
 
 %Moreover, we call these probabilities as a \emph{belief}.
 %Since we focus on finding all plausible future actions and their respective probabilities, we study the limitations of CRFs in such a setting
@@ -32,7 +32,6 @@ Anticipation is a challenging task, and it requires us to model the relationship
 \includegraphics[width=\textwidth]{Fig1}
 \caption{Figure is showing the state and measurements at each time represented by a CRF.
 Our algorithm, rCRF, enables the application of recursive Bayesian estimation to CRF-based scene models. rCRF computes the full belief over human activity and object affordances ($y^1,\ldots,y^{T+M}$) by using RGB-D Video ($x^1,\ldots,x^T$).}
-\vspace{-5mm}
 % In order to so, we propose a new model, rCRF, which can jointly use bayesian filtering and CRFs.}
 %  which are not observed.}
 %Estimating the belief over a CRF and using the estimated belief for anticipation and robot planning. \emph{(Colors of the nodes are representing the labels.)}}
@@ -44,7 +43,7 @@ Bayesian filtering methods can accurately estimate a belief (set of probabilitie
 % that requires the conditional probability of the observation given the variables of interest.
 %where it models the conditional probability of the variables of interest given an observation,
 
-In this paper, we present a recursive algorithm -- Recursive CRF (rCRF) -- which can efficiently estimate a full belief over a CRF-based temporal scene model. rCRF can be seen as an efficient belief estimation method which enables us to use CRF-based scene model in Bayesian filtering. It models the temporal evolution via Bayesian updates and models the measurements in the scene via CRF. In order to use CRFs in such a scenario, we solve two problems. First, we present an approximation to convert the discriminative likelihood of the CRF into a generative measurement equation. Second, we use structured diversity for tractable computation. To the best of our knowledge, rCRF is the only tractable method that can use a CRF-based scene model in a recursive Bayesian filtering.
+In this chapter, we present a recursive algorithm -- Recursive CRF (rCRF) -- which can efficiently estimate a full belief over a CRF-based temporal scene model. rCRF can be seen as an efficient belief estimation method which enables us to use CRF-based scene model in Bayesian filtering. It models the temporal evolution via Bayesian updates and models the measurements in the scene via CRF. In order to use CRFs in such a scenario, we solve two problems. First, we present an approximation to convert the discriminative likelihood of the CRF into a generative measurement equation. Second, we use structured diversity for tractable computation. To the best of our knowledge, rCRF is the only tractable method that can use a CRF-based scene model in a recursive Bayesian filtering.
 %Since we define the belief function recursively, we iterate the message propagation and diverse sampling until the convergence.
 
 We apply the rCRF to the problem of activity detection and anticipation from RGB-D data. As a CRF-based scene model, we use the model from \cite{hemaIJRR} which represents the scene as a CRF over human activity and object affordances. We then use the RGB-D video to detect and anticipate activities via rCRF. %We use the rCRF framework in order to anticipate the future activities as well.
@@ -54,7 +53,6 @@ Our experiments show that we outperform the state-of-the-art methods for detecti
 %We believe that the presented efficient and accurate estimation of a full belief can be combined with an optimal decision mechanisms (e.g. minimum Bayes risk \cite{decisionTheory,nabbe2007extending}) for better assitive robots.
 
 In summary, the contributions of this work are:
-%\vspace{-1mm}
 \begin{itemize}
 \item  We present Recursive-CRF (rCRF) method that uses the rich modeling power of CRF in
 Bayesian filtering setting.
@@ -65,4 +63,3 @@ Bayesian filtering setting.
 RGB-D videos.
 %\item  Our experiments show that rCRF significantly outperforms the state-of-the-art methods, both in accuracy and inference time.
 \end{itemize}
-%\vspace{\sectionReduceBot}

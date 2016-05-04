@@ -38,9 +38,7 @@ We also perform quantitative analysis over anticipation accuracy. We anticipate 
 \centering
 \tabcolsep=0.7mm
 \footnotesize
-%\vspace{-1mm}
 \caption{\textbf{Detection Performance over CAD-120.}  We compare rCRF with MAP solution and baselines for detections accuracy.}
-%\vspace{-1mm}
 \begin{tabular}{@{}l@{}|ccc|ccc@{}} \hline
 & \multicolumn{3}{@{}|c@{}}{Sub-activity } &   \multicolumn{3}{@{}|c@{}}{Object Affordance } \\ \hline
 & micro & \multicolumn{2}{@{}c|@{}}{macro} &   micro & \multicolumn{2}{@{}c@{}}{macro} \\
@@ -63,9 +61,7 @@ rCRF&  $\mathbf{68.1}${\scriptsize$\mathbf{\pm 1.3}$} & $\mathbf{66.1}${\scripts
 \centering
 \tabcolsep=0.7mm
 \footnotesize
-\vspace{-1mm}
 \caption{\textbf{Anticipation performance for the anticipating 3 seconds in the future.} We compare rCRF with state-of-the-art anticipation algorithm and baselines for anticipation accuracy.}
-\vspace{-1mm}
 \begin{tabular}{@{}l@{}|ccc|ccc@{}} \hline
 & \multicolumn{3}{@{}|c@{}}{Sub-activity } &   \multicolumn{3}{@{}|c@{}}{Object Affordance } \\ \hline
 & micro & macro & robot ant. &  micro & macro & robot ant.   \\
@@ -127,17 +123,13 @@ In order to see the effect of structural diversity on covering the output space,
 We evaluated the computational efficiency by computing the average computation time for anticipating 3 second in the future via rCRF and the fastest available anticipation algorithm (the ATCRF\cite{hemaAnt}). Within our experiments, we did not include any pre-processing or feature extraction computation (they are same for all algorithms). Our experiments suggest that the rCRF is faster than \cite{hemaAnt} as shown in Table~\ref{speed}. Hence, rCRF model outperforms the state-of-the-art anticipation algorithm in terms of speed in addition to the accuracy.
 \begin{table}[h!]
   \centering
-%  \vspace{-2mm}
 \caption{Computation time for anticipating 3 seconds in the future excluding pre-processing (\emph{see supplementary material for details}).}
-%\vspace{-2mm}
   \begin{tabular}{|cc|cc|}
     \hline
   ATCRF \cite{hemaAnt} \; \; & \; \; 34.1s  \; \;  \; & \; \; \;  rCRF \; \; & \; \;  1.41s \\ \hline
   \end{tabular}
-  \vspace{-1mm}
   \label{speed}
 \end{table}
-%\vspace{-2mm}
 
 \noindent {\bf Can rCRF generalize to RGB data?:}
 Since there is no RGB activity dataset with object labels, it is hard to compare our algorithm in the RGB activity analysis setting. Removing the concept of the objet form the graph, makes it a chain-CRF and the inference and learning becomes straightforward. However, we still implement our rCRF over a linear-chain CRF for RGB activity analysis. We based our implementation on MPII cooking activity dataset \cite{mpi_cooking} and use the publicly distributed features from the authors webpage. The shared features are HOG, HOF, dense trajetory features and  MBH \cite{dalal}.

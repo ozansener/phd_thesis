@@ -4,3 +4,63 @@ Appendix chapter 1 text goes here
 \chapter{Discrete Optimization Methods Used in the Thesis}
 \section{Quadratic Pseudo-Boolean Optimization}
 \section{Mixed Integer Programming}
+
+\chapter{Derivations for rCRF}
+\section{Supplementary Derivations}
+\subsection{Posterior Belief}
+Here, we present the derivation of the posterior belief (Chapter 2 paper Eq 8).
+
+We start with the definition of a belief as \mbox{$bel^t(\mathbf{y}) \propto  \alpha^t(\mathbf{y}) \beta^t(\mathbf{y})$} and substitute the definition of the messages from (main paper Eq 3). The resulting belief in log likelihood form is,
+\begin{equation}\small
+\begin{aligned}
+\log~bel^t(\mathbf{y}) &= \log p(\mathbf{x}^t|\mathbf{y}^t) + \log \sum_{\mathbf{y}^{t-1}} \alpha^{t-1}(\mathbf{y}^{t-1}) p(\mathbf{y}^{t}|\mathbf{y}^{t-1}) \\
+&+ \log \sum_{\mathbf{y}^{t+1}} p(\mathbf{x}^{t+1}|\bf{y}^{t+1}) \beta^{t+1}(\mathbf{y}^{t+1}) p(\mathbf{y}^{t+1}|\mathbf{y}^{t})
+\end{aligned}
+\end{equation}
+Here, we observe that forward message \mbox{$\alpha^{t-1}(\mathbf{y}^{t-1})=p(\mathbf{y}^{t-1}|\mathbf{x}^{1},\ldots,\mathbf{x}^{t-1})$} is a probability distribution, and backward message $\frac{1}{\gamma} \beta^{t+1} (\mathbf{y}^{t+1})  p(\mathbf{x}^{t+1}|\bf{y}^{t+1})$ can be considered as unnormalized density with a normalization term $\gamma$. Similar to the measurement equation, we also approximate the belief with its lower bound via Jensen inequality and compute the belief as;
+\begin{equation}\small
+  \begin{aligned}
+\log~&bel^t(\mathbf{y}) \approx \log p(\mathbf{x}^t|\mathbf{y}^t) + \sum_{\mathbf{y}^{t-1}} \alpha^{t-1}(\mathbf{y}^{t-1}) \log p(\mathbf{y}^{t}|\mathbf{y}^{t-1}) \\
+&+ \frac{1}{\gamma}\sum_{\mathbf{y}^{t+1}}\beta^{t+1}(\mathbf{y}^{t+1}) p(\mathbf{x}^{t+1}|\mathbf{y}^{t+1}) \log p(\mathbf{y}^{t+1}|\mathbf{y}^{t})+\log{\gamma}
+\end{aligned}
+\end{equation}
+Here, we also substitute $p(\mathbf{x}^t|\mathbf{y}^t)$ with (main paper Eq 7) and obtain the belief up to a scale as;
+\begin{equation}\small
+  \begin{aligned}
+&bel(\mathbf{y^t}) \propto \exp\left[  \sum_{i,j \in E^t} \left( \theta_{x^t_i,x^t_j}(y^t_i,y^t_j) - \tilde{\theta}(y^t_i,y^t_j) \right) \right. \\
+&\left. \sum_{i \in V^t} \left( \theta_{x^t_i}(y^t_i) - \tilde{\theta}(y^t_i) +  \sum_{\mathbf{y}^{t-1}} \alpha^{t-1}(\mathbf{y}^{t-1}) \log p(y^t_i|y^{t-1}_i) \right. \right. \\
+&+\left.\left.\frac{1}{\gamma}\sum_{\mathbf{y}^{t+1}} \beta^{t+1}(\mathbf{y}^{t+1}) p(\mathbf{x}^{t+1}|\mathbf{y}^{t+1}) \log p(y^{t+1}_i|y^{t}_i) \right) \right]
+\end{aligned}
+\label{crfbelief}
+\end{equation}
+where $\gamma=\sum_{\mathbf{y}^{t+1}} \beta^{t+1}(\mathbf{y}^{t+1}) p(\mathbf{x}^{t+1}|\mathbf{y}^{t+1})$
+\subsection{Solving Div-M-Best for rCRF}
+In this section, we explain how to solve the optimization problem in (main paper Eq 10) by using the Lagrange relaxation proposed by Batra et al.\cite{divmbest}.
+
+We are interested in the following optimization problem;
+\begin{equation}
+\begin{aligned}
+\mathbf{y}^{t,i} &= \argmax_{\mathbf{y}}  bel^t(\mathbf{y}) \\
+&s.t.\,\, \Delta(\mathbf{y},\mathbf{y}^{t,j}) \geq \delta \quad \forall \; {j < i}
+\end{aligned}
+\label{divopt}
+\end{equation}
+We first take the logarithm of the objective function since $\log$ is a monotonic function. We then follow the Div-M-Best procedure \cite{divmbest}. Div-M-Best uses Lagrange relaxation after dualizing the $\Delta(\bf{y},\bf{y}^{t,j}) \geq \delta$ constraints. Hence, the relaxed unconstrained optimization problem is,
+\begin{equation}
+\begin{aligned}
+\mathbf{y}^{t,i} &= \argmax_{\mathbf{y}}  \log bel^t(\mathbf{y}) + \sum_{m=0}^{i-1} \lambda_m (\Delta(\mathbf{y},\mathbf{y}^{t,m}) - \delta)
+\end{aligned}
+\label{divoptL}
+\end{equation}
+
+Please note that we use the hamming distance for $\Delta(\cdot$,$\cdot)$ within all of our experiments. Hence, we substitute the Hamming distance in the optimization objective with $\Delta(\cdot$,$\cdot)$. We further substitute the (\ref{crfbelief})  as,
+\begin{equation}\small
+\begin{aligned}
+\mathbf{y}^{t,i} &= \argmax_{\mathbf{y}}  \sum_{i,j \in E^t} \left( \theta_{x^t_i,x^t_j}(y^t_i,y^t_j) - \tilde{\theta}(y^t_i,y^t_j) \right) \\
+&\sum_{i \in V^t} \left( \theta_{x^t_i}(y^t_i) - \tilde{\theta}(y^t_i) + \sum_{m=0}^{i-1} \lambda_m \mathds{1}_{y^{t}_i \neq y^{t,m}_i} \right. \\
+&+\left.\frac{1}{\gamma}\sum_{\mathbf{y}^{t+1}} \beta^{t+1}(\mathbf{y^{t+1}}) p(\mathbf{x}^{t+1}|\mathbf{y}^{t+1}) \log p(y^{t+1}_i|y^{t}_i)  \right.\\
+&+ \left.  \sum_{\mathbf{y}^{t-1}} \alpha^{t-1}(\mathbf{y}^{t-1}) \log p(y^t_i|y^{t-1}_i) \right)
+\end{aligned}
+\label{divoptLOP}
+\end{equation}
+Where $\mathds{1}_A$ is an indicator function, and it is $1$ when $A$ is true and $0$ otherwise. Thus, the final optimization problem in (\ref{divoptLOP}) is equivalent to finding the MAP solution of a CRF with modified energy function. Moreover, we solve it by using the original inference method (Mixed Integer Programming) following \cite{hemaIJRR}.
