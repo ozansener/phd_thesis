@@ -21,8 +21,9 @@ The DivMBest algorithm in \cite{divmbest} uses the diverse sampling method to sa
 We evaluate the rCRF for activity detection and summarize the results in Table~\ref{Tdet}. Table~\ref{Tdet} suggests that the rCRF outperforms the MAP solution \cite{hemaIJRR} and performs similarly with the state-of-the-art solution \cite{latentIcra}. Since rCRF and \cite{hemaIJRR} are using the same spatial relations, the performance difference is due to the modeling of the temporal relations in rCRF. We use \mbox{first-order} statistics as temporal dynamics, and they are quite accurate as shown in the heatmap in Figure~\ref{heatmap}. They also capture semantic information like objects become stationary after being used.
 
 \begin{figure}
-  \subfigure[Human Activity]{\includegraphics[width=0.48\textwidth]{tranAct}}~
-  \subfigure[Object Affordance]{ \includegraphics[width=0.48\textwidth]{tranObj}}
+\centering
+  \subfigure[Human Activity]{\includegraphics[width=0.35\textwidth]{tranAct}}~
+  \subfigure[Object Affordance]{ \includegraphics[width=0.35\textwidth]{tranObj}}
   \caption{Heatmap of the first-order statistics of activity and object affordance classes. They are used as temporal dynamics by rCRF.}
   \label{heatmap}
 \end{figure}
@@ -92,7 +93,7 @@ In Figure~\ref{antHor} and \ref{objHor}, accuracy of all algorithms decreases wi
 
 \begin{figure}[ht]
 \begin{center}
-\includegraphics[width=\textwidth]{entTwo}
+\includegraphics[width=0.7\textwidth]{entTwo}
 \caption{Entropy of the belief vs. time \emph{(uniform dist. has $\approx 3.32$ bit entropy)}}
 \label{entRop}
 \end{center}
@@ -105,14 +106,14 @@ In order to see the effect of structural diversity on covering the output space,
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width= \textwidth]{AntO}
+  \includegraphics[width=0.7\textwidth]{AntO}
 \caption{Precision vs. anticipation horizon for object affordance.}
 \label{antHor}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=\textwidth]{AntA}
+  \includegraphics[width=0.7\textwidth]{AntA}
 \caption{Precision vs. anticipation horizon for subject activities.}
 \label{objHor}
 \end{figure}
@@ -124,7 +125,7 @@ We evaluated the computational efficiency by computing the average computation t
 \begin{table}[h!]
   \centering
 \caption{Computation time for anticipating 3 seconds in the future excluding pre-processing (\emph{see supplementary material for details}).}
-  \begin{tabular}{|cc|cc|}
+  \begin{tabular}{cc|cc}
     \hline
   ATCRF \cite{hemaAnt} \; \; & \; \; 34.1s  \; \;  \; & \; \; \;  rCRF \; \; & \; \;  1.41s \\ \hline
   \end{tabular}
@@ -137,6 +138,7 @@ Since there is no RGB activity dataset with object labels, it is hard to compare
 
 %\begin{table}
 \begin{table}
+\centering
   \caption{Anticipation performance for the anticipating 3 seconds in the future in MPII Cooking Dataset\cite{mpi_cooking}.}
 \begin{tabular}{l|ccc} \hline
 & micro & macro & macro  \\
