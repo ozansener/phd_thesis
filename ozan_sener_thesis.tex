@@ -97,14 +97,18 @@
 \makecopyright
 
 \begin{abstract}
-Your abstract goes here. Make sure it sits inside the brackets. If not,
-your biosketch page may not be roman numeral iii, as required by the
-graduate school.
+Humans created an tremendous value by collecting and organizing all their knowledge in publicly accessible forms as in Wikipedia and YouTube. The availability of such large knowledge-bases not only challenged the way we learn, it also challenged how we design artificial intelligence algorithms. Recently, propelled by the available data and expressive models, many successful computer vision and natural language processing algorithms emerged. However, we did not see a similar shift in robotics. Our robots are still having trouble recognizing basic objects, detecting humans even planning simple high-level tasks like \emph{how to make an omelette?}
+
+In this thesis, we start with studying the large-scale knowledge robots need. Our initial analysis suggests that robots need a very unique type of knowledge base with many requirements like multi-modal data and physical grounding of concepts. We further design such a large-scale knowledge base and show how can it be used in many robotics tasks. Given this knowledge base, robots need to handle many challenges like scarcity of the supervision and the shift between different modalities and domains. We propose machine learning algorithms which can handle lack of supervision and domain shift relying only on the latent structure of the available knowledge. Although we have very large-scaled knowledge, it is still missing some of the cases robots can encounter. Hence, we also develop algorithms which can explicitly model, learn and estimate the uncertainty in the robot perception again using underlying latent structure. Our algorithms show state-of-the-art performance in many robotics and computer vision benchmarks.
+
 \end{abstract}
 
 \begin{biosketch}
-Your biosketch goes here. Make sure it sits inside
-the brackets.
+Ozan \c{S}ener was born and raised in Sinop, a beautiful northern city in Turkey. His childhood memories mostly include writing various science-fiction stories full of killer robots and aliens. He learned programming during his high school in order to solve one nasty mathematical puzzle and his life changed when he realized he can build robots with that skill. He has built various robots since that day while competing in various robotics competitions. His next revelation was when he wanted to put a camera in one of his robots. He realized how challenging and fun the problem of robot perception/computer vision is and he lost his interest in mechanical and electrical engineering concepts. 
+
+He obtained his Bachelor of Science degree from Middle East Technical University, Ankara, Turkey and joined a computer vision research lab in the same university to complete his masters. During his studies he collaborated closely with Nokia Research Center, Tampere, Finland developing mobile computer vision algorithms. His algorithms were deployed in production as part of multimedia engine in Nokia N9 series phones, and he still brags about it whenever he sees someone using a Nokia phone- (un)fortunately, it does not happen often anymore-. 
+
+During his PhD studies at Cornell, he worked in the areas of machine learning, computer vision and robotics. He believes the intersection of these three topics is the perfect sweet spot for him as he likes to work on theory which can be applied on real systems and engineering systems which has strong theoretical inspirations. In his free time, he likes to juggle, hike, and write. He re-activated the Cornell Juggling Club during his PhD and consider it as one of his biggest academic achievements.
 \end{biosketch}
 
 \begin{dedication}
@@ -112,7 +116,7 @@ to
 \end{dedication}
 
 \begin{acknowledgements}
-%\input{ack}
+\input{ack}
 \end{acknowledgements}
 
 \contentspage
@@ -126,11 +130,11 @@ to
 %\epigraph{Either the locks were too large, or the key was too small.}{\textit{Lewis Carroll\\ Alice's Adventures in Wonderland}}
 \input{intro}
 
-\chapter{Sensing at Scale - RoboBrain}
+\chapter{Robotics at Scale - RoboBrain}
 %\epigraph{Parents of young organic life forms should be warned, that towels can be harmful, if swallowed in large quantities.}{\textit{Douglas %Adams\\ Hitchhiker's Guide to the Galaxy}}
 \input{rb}
 
-\chapter{Perception at Scale - Recursive Conditional Random Fields}
+\chapter{Perception through Time - Recursive Conditional Random Fields}
 %\epigraph{---~ Alice: How long is forever? \\ ---~ White Rabbit: Sometimes, just one second.}{\textit{Lewis Carroll\\ Alice's Adventures in %Wonderland}}
 \label{rcrf}
 \input{rcrf}
@@ -156,8 +160,8 @@ to
 % Visual world, robotics and we did this much and there are still things need to be done. 
 % NLP, Supervision.
 
-\appendix
-\input{appx}
+%\appendix
+%\input{appx}
 
 \bibliography{shortstrings,shortstrings2,ozan_sener_thesis}
 

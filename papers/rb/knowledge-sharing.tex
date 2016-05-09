@@ -1,10 +1,10 @@
-% !TEX root = robobrain.tex
+% !TEX root = ../../ozan_sener_thesis.tex
 
 
 \subsection{\robobrain{} for sharing knowledge}
 \robobrain{} allows sharing the knowledge learned by different research groups as well as knowledge obtained from various internet sources. In this section we show with experiments how sharing knowledge improves existing robotic applications:
 
-
+\iffalse
 \subsubsection{Sharing knowledge from the Internet}
 In this experiment we show that sharing knowledge from several Internet sources using \robobrain{} improves robotic applications such as path planning.  Knowledge from the Internet sources has been shown to help robots in planing better paths~\citep{beetzIcra2010}, understand natural language~\citep{coyneCosli,tellex2011understanding}, and also recently in object retrieval~\citep{guadarramaRss2014}. However, for certain robotic tasks a single Internet source does not cover many of the real world situations that the robot may encounter. In such situations it is desired to share the information from other sources to get an overall richer representation.
 The \robobrain{} graph is designed to acquire and connect information from multiple Internet sources and make it accessible to robots.
@@ -26,9 +26,9 @@ The \robobrain{} graph connects many attributes obtained from multiple Internet 
 \end{figure}
 
 Figure~\ref{fig:ndcg} illustrates the planning results when the robot does not use any attributes, when it uses attributes from a single source (OpenCyc), and when it use attributes from \robobrain{}. The planning performance is best when using \robobrain{} since it covers more attributes than the OpenCyc alone. Most importantly all these attributes are retrieved from the \robobrain{} graph with a single RQL query as explained in Section \ref{sec:applicationplanit}.
+\fi
 
-
-\subsubsection{Sharing learned representations}
+%\subsubsection{Sharing learned representations}
 
 New algorithms are commonly proposed for a problem to address the shortcomings of previous methods. These algorithms have their own learned representations. For example,  different representations  have been learned for grounding natural language~\citep{tellex2011understanding,misra2014tell,guadarrama2013grounding, MatuszekISER2012}. However, it is usually hard for practitioners to choose a single representation since there are always inputs where one representation fails but some others work. In this experiment we show that a robot can query \robobrain{} for the best representation while being agnostic to the algorithmic details of the learned representations.
 

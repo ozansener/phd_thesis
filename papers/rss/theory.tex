@@ -105,17 +105,7 @@ This gives us \mbox{$p(\mathbf{y}^t|\mathbf{y}^{t-1})=\prod_{i} p(y^t_i|y^{t-1}_
 % we model the relationship between variables via CRF and do not consider them while modelling temporal dynamics.
 %
 %After decomposing the state transition dynamics,
-We then compute the belief function as \mbox{$bel(\mathbf{y}^t)=\alpha^t(\mathbf{y}^t)\beta^t(\mathbf{y}^t)$} by using equations (\ref{mespas}) and (\ref{obsprob}). After algebraic manipulations, the belief function can be approximated as follows (see supplementary material for a detailed derivation):
-\iffalse
-\begin{equation}\small
-	\begin{aligned}
-&bel(\mathbf{y}^t) \propto \exp\left[  \sum_{i,j \in E^t} \left( \theta_{x^t_i,x^t_j}(y^t_i,y^t_j) - \tilde{\theta}(y^t_i,y^t_j) \right) \right. \\
-&\left. \sum_{i \in V^t} \left( \theta_{x^t_i}(y^t_i) - \tilde{\theta}(y^t_i) +  \sum_{\mathbf{y^{t-1}}} \alpha^{t-1}(\mathbf{y}^{t-1}) \log p(y^t_i|y^{t-1}_i) \right. \right. \\
-&+\left.\left.\sum_{\mathbf{y}^{t+1}} \beta^{t+1}(\mathbf{y}^{t+1}) p(\mathbf{x}^{t+1}|\mathbf{y}^{t+1}) \log p(y^t_i|y^{t-1}_i) \right) \right]
-\end{aligned}
-\label{crfbelief}
-\end{equation}
-\fi
+We then compute the belief function as \mbox{$bel(\mathbf{y}^t)=\alpha^t(\mathbf{y}^t)\beta^t(\mathbf{y}^t)$} by using equations (\ref{mespas}) and (\ref{obsprob}). After algebraic manipulations, the belief function can be approximated as follows:
 
 \begin{equation}\small
   \begin{aligned}
@@ -151,6 +141,26 @@ Since there are only a few plausible explanation of a visual observation and CRF
 \label{divopt}
 \end{equation}
 %where $\bf{y}^{t,i}$ is the $i^{th}$ sample in the $t^{th}$ frame.
-This optimization is NP-hard in general; however, since we already showed $bel^t(\bf{y})$ is CRF, we use the existing diverse-m-best algorithms developed for CRFs. We use the Lagrange relaxation by Batra et al. \cite{divmbest}. We explain the details of solving this problem by using \cite{divmbest} in supplementary material.
+This optimization is NP-hard in general; however, since we already showed $bel^t(\bf{y})$ is CRF, we use the existing diverse-m-best algorithms developed for CRFs. We use the Lagrange relaxation by Batra et al. \cite{divmbest}. 
+
+We first take the logarithm of the objective function since $\log$ is a monotonic function. We then follow the Div-M-Best procedure \cite{divmbest}. Div-M-Best uses Lagrange relaxation after dualizing the $\Delta(\bf{y},\bf{y}^{t,j}) \geq \delta$ constraints. Hence, the relaxed unconstrained optimization problem is,
+\begin{equation}
+\begin{aligned}
+\mathbf{y}^{t,i} &= \argmax_{\mathbf{y}}  \log bel^t(\mathbf{y}) + \sum_{m=0}^{i-1} \lambda_m (\Delta(\mathbf{y},\mathbf{y}^{t,m}) - \delta)
+\end{aligned}
+\label{divoptL}
+\end{equation}
+
+Please note that we use the hamming distance for $\Delta(\cdot$,$\cdot)$ within all of our experiments. Hence, we substitute the Hamming distance in the optimization objective with $\Delta(\cdot$,$\cdot)$. We further substitute the (\ref{crfbelief})  as,
+\begin{equation}\small
+\begin{aligned}
+\mathbf{y}^{t,i} &= \argmax_{\mathbf{y}}  \sum_{i,j \in E^t} \left( \theta_{x^t_i,x^t_j}(y^t_i,y^t_j) - \tilde{\theta}(y^t_i,y^t_j) \right) \\
+&\sum_{i \in V^t} \left( \theta_{x^t_i}(y^t_i) - \tilde{\theta}(y^t_i) + \sum_{m=0}^{i-1} \lambda_m \mathds{1}_{y^{t}_i \neq y^{t,m}_i} \right. \\
+&+\left.\frac{1}{\gamma}\sum_{\mathbf{y}^{t+1}} \beta^{t+1}(\mathbf{y^{t+1}}) p(\mathbf{x}^{t+1}|\mathbf{y}^{t+1}) \log p(y^{t+1}_i|y^{t}_i)  \right.\\
+&+ \left.  \sum_{\mathbf{y}^{t-1}} \alpha^{t-1}(\mathbf{y}^{t-1}) \log p(y^t_i|y^{t-1}_i) \right)
+\end{aligned}
+\label{divoptLOP}
+\end{equation}
+Where $\mathds{1}_A$ is an indicator function, and it is $1$ when $A$ is true and $0$ otherwise. Thus, the final optimization problem in (\ref{divoptLOP}) is equivalent to finding the MAP solution of a CRF with modified energy function. Moreover, we solve it by using the original inference method (Mixed Integer Programming) following \cite{hemaIJRR}.
 
 In summary, we first compute the belief via (\ref{crfbelief}) for all frames by using samples of the previous and the next frame as well as CRF likelihoods. Then, we compute the diverse samples of (\ref{crfbelief}) by using \cite{divmbest}. After computing the samples, we compute the messages $\alpha^t$ and $\beta^t$ by using the equations (\ref{obsprob}) and (\ref{mespas}). We continue to re-sample the beliefs and re-compute the messages recursively until the convergence. Moreover, during the initialization, we only sample the observation function (\ref{obsprob}) since the messages are not available.
